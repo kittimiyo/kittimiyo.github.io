@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/WXRs6bFZChfzCx3pXob5o_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+
+#title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    position: relative;
+    text-align: center;
+    padding: 40px 0 30px 0;
+}
+
+#total {
+    margin: 0 auto;
+    overflow: auto;
+    width: 400px;
+    float: none;
+}
+
+#part {
+    margin: 0 auto;
+    width: 400px;
+    position: relative;
+    overflow: auto;
+}
+
+#numX {
+    width: 363px;
+    float: right;
+    letter-spacing: 30px;
+    padding: 0 0 12px 0;
+}
+
+#numY {
+    float: left;
+    position: relative;
+    overflow: hidden;
+    line-height: 40px;
+    padding: 0 16px 0 0;
+    width: 8px;
+}
+
+#sudoku {
+    width: 363px;
+    float: left;
+    overflow: hidden;
+}
+
+
+
+#numY, #numX {
+    font-size: 20px;
+}
+
+#sudoku div table{
+    float: left;
+    border: black solid 1px;
+}
+
+td {
+    border: black solid 1px;
+    border-spacing: 0;
+    position: relative;
+    table-layout: fixed;
+    width: 37px;
+    height: 37px;
+    text-align: center;
+}
+/*
+
+th {
+    border: black solid 1px;
+    width: 369px;
+}
+*/
+
+table {
+}
+
+td input {
+    width: 37px;
+    height: 29px;
+    border: 0;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+}
+
+input:focus {
+    outline: none;
+}
+
+table, th{
+    border: black solid 1px;
+    border-collapse: collapse;
+}
+
+
+td table {
+    border: black solid 2px;
+}
+
+/*
+.t {
+position: relative;
+    //float: left;
+}
+.mr {
+position: relative;
+    //top: -4px;
+}
+.b {
+position: relative;
+    //top: -7px;
+}
+.l {
+position: relative;
+    //left: -1px;
+}
+.mc {
+position: relative;
+    //left: -4px;
+}
+.r {
+position: relative;
+    //left: -7px;
+}
+*/
