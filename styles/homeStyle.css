@@ -29,8 +29,8 @@ button {
     display: block;
     position: relative;
     margin: 0 auto;
-    border-width: 0;
-    padding: 5px;
+    border: 2px solid #c5c5c5;
+    padding: 4px;
     border-radius: 2px;
     background-color: #DFDFDF;
     font-size: 20px;
@@ -38,8 +38,8 @@ button {
     width: 81px;
 }
 button:hover {
-    border: 1px solid #8E8E8E;
-    padding: 4px;
+    border: 3px solid #8E8E8E;
+    padding: 3px;
     font-weight: bold;
     cursor: pointer;
 }

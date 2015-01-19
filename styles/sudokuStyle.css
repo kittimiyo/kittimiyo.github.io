@@ -51,7 +51,11 @@
     overflow: hidden;
 }
 
-
+button {
+font-size: 20px;
+    position: relative;
+    margin: 0 auto;
+}
 
 #numY, #numX {
     font-size: 20px;
