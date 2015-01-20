@@ -20,6 +20,7 @@
     overflow: auto;
     width: 400px;
     float: none;
+    padding-bottom: 20px;
 }
 
 #part {
@@ -51,10 +52,24 @@
     overflow: hidden;
 }
 
+
 button {
-font-size: 20px;
+    display: block;
     position: relative;
     margin: 0 auto;
+    border: 2px solid #c5c5c5;
+    padding: 4px;
+    border-radius: 2px;
+    background-color: #DFDFDF;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    width: 81px;
+}
+button:hover {
+    border: 3px solid #8E8E8E;
+    padding: 3px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 #numY, #numX {
