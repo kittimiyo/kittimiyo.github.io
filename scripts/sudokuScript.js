@@ -13,16 +13,13 @@ for (var i=0;i<3;i++) {
     }
 }
 
-var inputs;
-var st;
-var ind;
-var val;
-var valid;
+var inputs, st, err, ind, val, valid, numberFound = false;
 var print = function()
 {
     inputs = document.getElementsByClassName("inp");
     valid = true;
     st='';
+    err='';
     for(var i=0;i<3;i++)
     {
         for (var j = 0; j < 3; j++)
@@ -37,14 +34,18 @@ var print = function()
                         val = inputs[ind].value;
                         if ((val != 1) && (val != 2) && (val != 3) && (val != 4) && (val != 5) && (val != 6) && (val != 7) && (val != 8) && (val != 9) && (val != ""))
                         {
-                            st += "<br>Invalid input at row " + ((i*3)+(k+1)) + ", column " + ((j*3)+(l+1)) +": [" + inputs[ind].value +"]";
+                            err += "<br>Invalid input at row " + ((i*3)+(k+1)) + ", column " + ((j*3)+(l+1)) +": [" + inputs[ind].value +"]";
                             valid = false;
                         }
                         else if (val == '')
                         {
                             st += inputs[ind].value;
                         }
-                        else st += "<br>" + inputs[ind].value;
+                        else 
+                        {
+                            st += "<br>" + inputs[ind].value;
+                            numberFound = true;
+                        }
                     }
                     else st += 'emp';
                     st+= ' ';
@@ -52,12 +53,18 @@ var print = function()
             }
         }
     }
-    if(valid)
+    if(valid && numberFound)
     {
         st += "<br>Inputs are valid!";
-        document.getElementById('solve').display = 'none';
+        document.getElementById('solve').style.display = 'block';
+    }
+    if(!numberFound)
+    {
+        err += "<br>No valid numbers entered."
     }
     document.getElementById("str").innerHTML = st;
+    document.getElementById("msg").innerHTML = err;
+    numberFound = false;
     console.log(st);
 }
 

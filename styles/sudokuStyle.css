@@ -54,7 +54,27 @@
 
 #solve {
     margin: 8px auto 0px auto;
+    display: none;
+}
+
+#errorMsg {
+    color: red;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    top:  -30px;
     display: block;
+    margin: 0 auto;    
+    width: 390px;
+    height:  2px;
+}
+
+#msg {
+    color: red;
+    font-size: 15px;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+    float: left;
 }
 
 button {
