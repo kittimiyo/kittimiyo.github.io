@@ -60,7 +60,8 @@ var print = function()
     }
     if(!numberFound)
     {
-        err += "<br>No valid numbers entered."
+      if(err.length > 0) { err += '<br>'; }
+      err += "<br>No valid numbers entered."
     }
     document.getElementById("str").innerHTML = st;
     document.getElementById("msg").innerHTML = err;
