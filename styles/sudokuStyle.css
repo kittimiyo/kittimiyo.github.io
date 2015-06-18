@@ -92,7 +92,7 @@ table {
     float: left;
     position: relative;
     overflow: hidden;
-    line-height: 40px;
+    line-height: 38px;
     padding: 0 16px 0 0;
     width: 8px;
 }
@@ -115,7 +115,7 @@ table {
     position: relative;
     top:  -30px;
     display: block;
-    margin: 0 auto;    
+    margin: 0 auto;
     width: 390px;
     height:  2px;
 }
@@ -167,13 +167,6 @@ td {
     height: 37px;
     text-align: center;
 }
-/*
-
-th {
-    border: black solid 1px;
-    width: 369px;
-}
-*/
 
 table {
 }
@@ -197,34 +190,7 @@ table, th{
     border-collapse: collapse;
 }
 
-
 td table {
     border: black solid 2px;
 }
 
-/*
-.t {
-position: relative;
-    //float: left;
-}
-.mr {
-position: relative;
-    //top: -4px;
-}
-.b {
-position: relative;
-    //top: -7px;
-}
-.l {
-position: relative;
-    //left: -1px;
-}
-.mc {
-position: relative;
-    //left: -4px;
-}
-.r {
-position: relative;
-    //left: -7px;
-}
-*/
