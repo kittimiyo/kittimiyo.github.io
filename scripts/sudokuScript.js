@@ -1,8 +1,9 @@
 /**
  * Created by boenkes on 1/9/2015.
  */
-
-//var logic = require('./sudokuLogic')  //todo: requirejs
+//todo: requirejs
+//todo: limit minimum number of integers to 17
+//var logic = require('./sudokuLogic')  
 
 var a = [[[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]] ],
         [ [[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]] ],
