@@ -104,8 +104,11 @@ table {
 }
 
 #solve {
-    margin: 8px auto 0px auto;
     display: none;
+}
+
+#test {
+    width: 200px;
 }
 
 #errorMsg {
@@ -133,7 +136,7 @@ table {
 button {
     display: block;
     position: relative;
-    margin: 0 auto;
+    margin: 8px auto;
     border: 2px solid #c5c5c5;
     padding: 4px;
     border-radius: 2px;
