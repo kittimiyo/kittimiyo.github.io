@@ -142,11 +142,16 @@ button {
     font-family: 'Raleway', sans-serif;
     width: 81px;
 }
+
 button:hover {
     border: 3px solid #8E8E8E;
     padding: 3px;
     font-weight: bold;
     cursor: pointer;
+}
+
+button:focus {
+    outline: none;
 }
 
 #numY, #numX {
