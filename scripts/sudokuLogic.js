@@ -5,3 +5,7 @@
 //test = function() {
 //  console.log('test passed');
 //};
+
+setHints = function(a) {
+
+};
