@@ -15,7 +15,7 @@ for (var i=0;i<3;i++) {
       for (var l=0;l<3;l++) {
         a[i][j][k][l] = {
           hint: [1,2,3,4,5,6,7,8,9],
-          value: null,
+          value: 0,
           index: (27*i) + (9*j) + (3*k) + l
         }
       }
@@ -23,13 +23,13 @@ for (var i=0;i<3;i++) {
   }
 }
 
-var inputs, st, err, ind, val, valid, numberFound = false;
-var print = function() {
-  inputs = document.getElementsByClassName("inp");
-  valid = true;
+var st, err, ind, val, numberFound = false;
+var load = function() {
+  var inputs = document.getElementsByClassName("inp");
+  var valid = true;
   st='';
   err='';
-  for(var i=0;i<3;i++) {
+  for(var i = 0; i < 3; i++) {
     for (var j = 0; j < 3; j++) {
       for (var k = 0; k < 3; k++) {
         for (var l = 0; l < 3; l++) {
@@ -44,13 +44,13 @@ var print = function() {
                 valid = false;
               }
 
-              val = null;
+              val = 0;
             } else {
               st += "<br>" + val;
               numberFound = true;
               console.log("ind: " + ind + " value: " + val);
             }
-            a[i][j][k][l].value = (val === null ? null : Number(val));
+            a[i][j][k][l].value = Number(val);
           }
           else st += 'emp';
           st+= ' ';
@@ -73,8 +73,28 @@ var print = function() {
   console.log(st);
 };
 
+var updateSudoku = function(a){
+  var show = document.getElementsByClassName("inp");
+  var ind;
+
+  for(var i = 0; i < 3 ; i++) {
+    for (var j = 0; j < 3; j++) {
+      for (var k = 0; k < 3; k++) {
+        for (var l = 0; l < 3; l++) {
+          ind = (27*i) + (9*j) + (3*k) + l;
+          if(a[i][j][k][l].value !== 0) {
+            show[ind].value = a[i][j][k][l].value;
+          } else {
+            show[ind].value = a[i][j][k][l].hint;
+          }
+        }
+      }
+    }
+  }
+}
+
 var test = function() {
-  inputs = [];
+  var inputs = [];
   inputs[0] = 5;
   inputs[5] = 7;
   inputs[6] = 1;
@@ -108,12 +128,14 @@ var test = function() {
       for (var k = 0; k < 3; k++) {
         for (var l = 0; l < 3; l++) {
           ind = (27*i) + (9*j) + (3*k) + l;
-          if(inputs[ind] !== null) { a[i][j][k][l].value = inputs[ind]}
-          else a[i][j][k][l].value = null;
+          if(inputs[ind] !== undefined) { a[i][j][k][l].value = inputs[ind] }
+          else a[i][j][k][l].value = 0;
         }
       }
     }
   }
-
+  
+  updateSudoku(a);
   setHints(a);
 };
+
