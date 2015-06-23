@@ -34,4 +34,4 @@ cycleBox = function(a, ind) {
             }
         }
     }
-}
+};
