@@ -1,1110 +1,1110 @@
 <!DOCTYPE html>
 <html>
-    <head lang="en">
-        <script type="text/javascript" src="../scripts/sudokuScript.js"></script>
-        <script type="text/javascript" src="../scripts/sudokuLogic.js"></script>
-        <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-        <link href="../styles/sudokuStyle.css" type="text/css" rel="stylesheet">
-        <meta charset="UTF-8">
-        <title>Sudoku Solver</title>
-    </head>
-    <body>
-        <div id="title">
-            Sudoku Solver!
+  <head lang="en">
+    <script type="text/javascript" src="../scripts/sudokuScript.js"></script>
+    <script type="text/javascript" src="../scripts/sudokuLogic.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href="../styles/sudokuStyle.css" type="text/css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Sudoku Solver</title>
+  </head>
+  <body>
+    <div id="title">
+      Sudoku Solver!
+    </div>
+    <div id="errorMsg"><div id="msg"></div></div>
+    <div id="total">
+      <div id="numX">123456789</div>
+      <div id="part">
+        <div id="numY">
+          1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
         </div>
-        <div id="errorMsg"><div id="msg"></div></div>
-        <div id="total">
-            <div id="numX">123456789</div>
-            <div id="part">
-                <div id="numY">
-                    1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
-                </div>
-                <div id="sudoku">
-                    <div id="top">
-                        <table class="t l" id="00">
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="t mc" id="01">
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="t r" id="02">
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div id="mid">
-                        <table class="mr l" id="10">
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="mr mc" id="11">
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="mr r" id="12">
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div id="bot">
-                        <table class="b l" id="20">
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="b mc" id="21">
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                        <table class="b r" id="22">
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td><td><input class="inp">
-                                    <ul class="hnt">
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                        <li>
-                                            <ul class="row"><li></li><li></li><li></li></ul>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+        <div id="sudoku">
+          <div id="top">
+            <table class="t l" id="00">
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <table class="t mc" id="01">
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <table class="t r" id="02">
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="mid">
+            <table class="mr l" id="10">
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <table class="mr mc" id="11">
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <table class="mr r" id="12">
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="bot">
+            <table class="b l" id="20">
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <table class="b mc" id="21">
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+            <table class="b r" id="22">
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td><td><input class="inp">
+                  <ul class="hnt">
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                    <li>
+                      <ul class="row"><li></li><li></li><li></li></ul>
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
-        <button type=button onClick="load()">Load</button>
-        <button id="test" type=button onClick="test()">Load Test Sudoku</button>
-        <button id="solve" type=button onClick="solveTest()">Solve!</button>
-        <div id="str"></div>
-    </body>
+      </div>
+    </div>
+    <button type=button onClick="load()">Load</button>
+    <button id="test" type=button onClick="test()">Load Test Sudoku</button>
+    <button id="solve" type=button onClick="solveTest()">Solve!</button>
+    <div id="str"></div>
+  </body>
 </html>

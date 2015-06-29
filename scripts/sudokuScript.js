@@ -55,7 +55,7 @@ var load = function() {
           if (inputs[ind].value != null) {
             val = Number(inputs[ind].value);
             if (!validNum(val)) {
-              if (val !== '') {
+              if ((val !== '') && (val !== 0)) {
                 err += "<br>Invalid input at row " + ((i*3)+(k+1)) + ", column " + ((j*3)+(l+1)) +": [" + val +"]";
                 valid = false;
               }
@@ -161,7 +161,7 @@ var test = function() {
       }
     }
   }
-  
+
   setHints(a);
   updateSudoku(a);
 
