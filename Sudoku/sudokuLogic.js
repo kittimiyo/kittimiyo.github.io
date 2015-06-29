@@ -50,6 +50,9 @@ var solve = function(a, change) {
       }
     }
   }
+
+  change = (change || setHintsByBullet(a));
+
   return change;
 };
 
@@ -82,7 +85,7 @@ var setHintsByValue = function(a, i, j, k, l) {
       }
     }
   }
-}
+};
 
 var setHintsByGather = function(a, i, j, k, l, change) {
   var num, curr, found = true, change = false;
@@ -149,8 +152,7 @@ var setHintsByGather = function(a, i, j, k, l, change) {
 };
 
 var setHintsByBullet = function(a) {
-  var i, j, k, l;
-  var bullets = [];
+  var change = false;
   var hints = [];
 
   for(var i = 0; i < 3 ; i++) {
@@ -164,16 +166,67 @@ var setHintsByBullet = function(a) {
               hints = getHints(a[i][j][k][l]);
               for (var count = 0; count < hints.length; count++) {
                 var curHint = hints[count];
-                if(validNum(curHint)) {
-                  
+                if(curHint === hint) {
+                  row.push(k);
+                  col.push(l);
                 }
               }
             }
           }
         }
+        if(allSame(row)) {
+          change = (change || clearRow(a, i, j, row[0], hint));
+        }
+        if(allSame(col)) {
+          change = (change || clearCol(a, i, j, col[0], hint));
+        }
       }
     }
   }
+  return change;
+};
 
+var allSame = function(arr) {
+  if(arr.length > 0) {
+    var val = arr[0];
+    var same = true;
 
+    for (var count = 1; count < arr.length; count++) {
+      if(arr[count] !== val) { same = false; }
+    }
+
+    return same;
+  }
+
+  return false;
+};
+
+var clearRow = function(a, i, j, k, num) {
+  var change = false;
+  for (var curJ = 0; curJ < 3; curJ++) {
+    for (var l = 0; l < 3; l++) {
+      if((!validNum(a[i][curJ][k][l].value)) && (curJ !== j)) {
+        if(a[i][curJ][k][l].hint[num-1] !== '') {
+          a[i][curJ][k][l].hint[num - 1] = '';
+          change = true;
+        }
+      }
+    }
+  }
+  return change;
+};
+
+var clearCol = function(a, i, j, l, num) {
+  var change = false;
+  for (var curI = 0; curI < 3; curI++) {
+    for (var k = 0; k < 3; k++) {
+      if((!validNum(a[curI][j][k][l].value)) && (curI !== i)) {
+        if(a[curI][j][k][l].hint[num-1] !== '') {
+          a[curI][j][k][l].hint[num - 1] = '';
+          change = true;
+        }
+      }
+    }
+  }
+  return change;
 };
