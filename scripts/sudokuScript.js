@@ -23,7 +23,25 @@ for (var i=0;i<3;i++) {
   }
 }
 
+var validNum = function(val) {
+  return  ((val === 1) || (val === 2) || (val === 3)
+              || (val === 4) || (val === 5) || (val === 6)
+              || (val === 7) || (val === 8) || (val === 9));
+}
+
+var getHints = function(cell) {
+  var arr = [];
+  for(var i = 0; i < 9; i++) {
+    if(validNum(cell.hint[i])) {
+      arr.push(cell.hint[i]);
+    }
+  }
+
+  return arr;
+}
+
 var st, err, ind, val, numberFound = false;
+
 var load = function() {
   var inputs = document.getElementsByClassName("inp");
   var valid = true;
@@ -35,10 +53,8 @@ var load = function() {
         for (var l = 0; l < 3; l++) {
           ind = (27*i) + (9*j) + (3*k) + l;
           if (inputs[ind].value != null) {
-            val = inputs[ind].value;
-            if ((val !== '1') && (val !== '2') && (val !== '3')
-              && (val !== '4') && (val !== '5') && (val !== '6')
-              && (val !== '7') && (val !== '8') && (val !== '9')) {
+            val = Number(inputs[ind].value);
+            if (!validNum(val)) {
               if (val !== '') {
                 err += "<br>Invalid input at row " + ((i*3)+(k+1)) + ", column " + ((j*3)+(l+1)) +": [" + val +"]";
                 valid = false;
@@ -73,8 +89,9 @@ var load = function() {
   console.log(st);
 };
 
-var updateSudoku = function(a){
-  var show = document.getElementsByClassName("inp");
+var updateSudoku = function(a) {
+  var values = document.getElementsByClassName("inp");
+  var hints = document.getElementsByClassName("hnt");
   var ind;
 
   for(var i = 0; i < 3 ; i++) {
@@ -82,16 +99,26 @@ var updateSudoku = function(a){
       for (var k = 0; k < 3; k++) {
         for (var l = 0; l < 3; l++) {
           ind = (27*i) + (9*j) + (3*k) + l;
-          if(a[i][j][k][l].value !== 0) {
-            show[ind].value = a[i][j][k][l].value;
+          if(validNum(a[i][j][k][l].value)) {
+            values[ind].value = a[i][j][k][l].value;
+            for (var m = 0; m < 3; m++) {
+              for (var n = 0; n < 3; n++) {
+                hints[ind].getElementsByClassName('row')[m].getElementsByTagName('li')[n].innerText = '';
+              }
+            }
           } else {
-            show[ind].value = a[i][j][k][l].hint;
+            for (var m = 0; m < 3; m++) {
+              for (var n = 0; n < 3; n++) {
+                hints[ind].getElementsByClassName('row')[m].getElementsByTagName('li')[n].innerText = a[i][j][k][l].hint[3*m + n];
+              }
+            }
           }
         }
       }
     }
   }
 }
+
 
 var test = function() {
   var inputs = [];
@@ -135,7 +162,25 @@ var test = function() {
     }
   }
   
-  updateSudoku(a);
   setHints(a);
+  updateSudoku(a);
+
+  document.getElementById('solve').style.display = 'block';
+  document.getElementById('solve').onClick = 'solveTest()';
+  document.getElementById('test').style.display = 'none';
 };
 
+var solveTest = function() {
+  var change = true;
+  while (change) {
+    change = solveLoop(a);
+  }
+}
+
+var solveLoop = function(a, change) {
+  setHints(a);
+  updateSudoku(a);
+  return solve(a, change);
+  setTimeout(function() {
+  }, 3000);
+}
