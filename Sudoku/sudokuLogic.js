@@ -2,26 +2,9 @@
  * Created by Sylvie on 6/18/15.
  */
 
-setHints = function(a) {
-  //var values = document.getElementsByClassName("inp");
-  //var hints = document.getElementsByClassName("hnt");
-
-  for(var i = 0; i < 3 ; i++) {
-    for (var j = 0; j < 3; j++) {
-      for (var k = 0; k < 3; k++) {
-        for (var l = 0; l < 3; l++) {
-          ind = (27*i) + (9*j) + (3*k) + l;
-          if(validNum(a[i][j][k][l].value)) {
-            setHintsByValue(a, i, j, k, l);
-          }
-        }
-      }
-    }
-  }
-};
-
 var solve = function(a, change) {
-  var hints, gatheredHints, change = false;
+  var hints;
+  change = false;
 
   for(var i = 0; i < 3 ; i++) {
     for (var j = 0; j < 3; j++) {
@@ -56,7 +39,56 @@ var solve = function(a, change) {
   return change;
 };
 
-var setHintsByValue = function(a, i, j, k, l) {
+var setValuesSingleHint = function(a) {
+  for(var i = 0; i < 3 ; i++) {
+    for (var j = 0; j < 3; j++) {
+      for (var k = 0; k < 3; k++) {
+        for (var l = 0; l < 3; l++) {
+          if(!validNum(a[i][j][k][l].value)) {
+            hints = getHints(a[i][j][k][l]);
+            if(hints.length === 1) {
+              a[i][j][k][l].value = hints[0];
+            }
+          }
+        }
+      }
+    }
+  }
+  updateVisual(a);
+};
+
+setHintsSimple = function(a) {
+  for(var i = 0; i < 3 ; i++) {
+    for (var j = 0; j < 3; j++) {
+      for (var k = 0; k < 3; k++) {
+        for (var l = 0; l < 3; l++) {
+          ind = (27*i) + (9*j) + (3*k) + l;
+          if(validNum(a[i][j][k][l].value)) {
+            setHintValue(a, i, j, k, l);
+          }
+        }
+      }
+    }
+  }
+  updateVisual(a);
+};
+
+var setHintsByGather = function(a) {
+  for(var i = 0; i < 3 ; i++) {
+    for (var j = 0; j < 3; j++) {
+      for (var k = 0; k < 3; k++) {
+        for (var l = 0; l < 3; l++) {
+          if(!validNum(a[i][j][k][l].value)) {
+            gatherHints(a, i, j, k, l);
+          }
+        }
+      }
+    }
+  }
+  updateVisual(a);
+};
+
+var sweepHints = function(a, i, j, k, l) {
   var num = a[i][j][k][l].value;
   var curr;
   for (var m = 0; m < 3; m++) {
@@ -68,8 +100,8 @@ var setHintsByValue = function(a, i, j, k, l) {
     }
   }
 
-  for (var m = 0; m < 3; m++) {
-    for (var n = 0; n < 3; n++) {
+  for (m = 0; m < 3; m++) {
+    for (n = 0; n < 3; n++) {
       curr = a[i][m][k][n].value;
       if(!validNum(curr)) {
         a[i][m][k][n].hint[num-1] = '';
@@ -77,8 +109,8 @@ var setHintsByValue = function(a, i, j, k, l) {
     }
   }
 
-  for (var m = 0; m < 3; m++) {
-    for (var n = 0; n < 3; n++) {
+  for (m = 0; m < 3; m++) {
+    for (n = 0; n < 3; n++) {
       curr = a[m][j][n][l].value;
       if(!validNum(curr)) {
         a[m][j][n][l].hint[num-1] = '';
@@ -87,7 +119,7 @@ var setHintsByValue = function(a, i, j, k, l) {
   }
 };
 
-var setHintsByGather = function(a, i, j, k, l, change) {
+var gatherHints = function(a, i, j, k, l, change) {
   var num, curr, found = true, change = false;
   var hints = getHints(a[i][j][k][l]);
 
@@ -183,6 +215,7 @@ var setHintsByBullet = function(a) {
       }
     }
   }
+  updateVisual(a);
   return change;
 };
 

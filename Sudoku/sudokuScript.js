@@ -27,7 +27,7 @@ var validNum = function(val) {
   return  ((val === 1) || (val === 2) || (val === 3)
               || (val === 4) || (val === 5) || (val === 6)
               || (val === 7) || (val === 8) || (val === 9));
-}
+};
 
 var getHints = function(cell) {
   var arr = [];
@@ -38,7 +38,7 @@ var getHints = function(cell) {
   }
 
   return arr;
-}
+};
 
 var st, err, ind, val, numberFound = false;
 
@@ -89,7 +89,7 @@ var load = function() {
   console.log(st);
 };
 
-var updateSudoku = function(a) {
+var updateVisual = function(a) {
   var values = document.getElementsByClassName("inp");
   var hints = document.getElementsByClassName("hnt");
   var ind;
@@ -107,9 +107,9 @@ var updateSudoku = function(a) {
               }
             }
           } else {
-            for (var m = 0; m < 3; m++) {
-              for (var n = 0; n < 3; n++) {
-                hints[ind].getElementsByClassName('row')[m].getElementsByTagName('li')[n].innerText = a[i][j][k][l].hint[3*m + n];
+            for (var o = 0; o < 3; o++) {
+              for (var p = 0; p < 3; p++) {
+                hints[ind].getElementsByClassName('row')[o].getElementsByTagName('li')[p].innerText = a[i][j][k][l].hint[3*o + p];
               }
             }
           }
@@ -117,7 +117,7 @@ var updateSudoku = function(a) {
       }
     }
   }
-}
+};
 
 
 var test = function() {
@@ -162,11 +162,7 @@ var test = function() {
     }
   }
 
-  setHints(a);
-  updateSudoku(a);
-
   document.getElementById('solve').style.display = 'block';
-  document.getElementById('solve').onClick = 'solveTest()';
   document.getElementById('test').style.display = 'none';
 };
 
@@ -175,12 +171,10 @@ var solveTest = function() {
   while (change) {
     change = solveLoop(a);
   }
-}
+};
 
 var solveLoop = function(a, change) {
   setHints(a);
   updateSudoku(a);
   return solve(a, change);
-  setTimeout(function() {
-  }, 3000);
-}
+};
