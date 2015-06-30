@@ -187,6 +187,7 @@ td input {
     position: relative;
     text-align: center;
     font-size: 30px;
+    z-index: 200;
 }
 
 input:focus {
@@ -207,6 +208,7 @@ td table {
     top: -2px;
     left: 0;
     width: 37px;
+    z-index: 300;
 }
 
 ul.row {
@@ -218,4 +220,15 @@ ul.row li {
     font-family: 'Lato', sans-serif;
     font-size: 11px;
     width: 12px;
+}
+
+.options {
+    width: 120px;
+    display: inline-block;
+}
+
+#options {
+    margin: 0 auto;
+    display: none;
+    width: 368px;
 }

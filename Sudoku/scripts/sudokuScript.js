@@ -162,8 +162,11 @@ var test = function() {
     }
   }
 
+  setHintsBySweep();
+  updateVisual(a);
   document.getElementById('solve').style.display = 'block';
   document.getElementById('test').style.display = 'none';
+  document.getElementById('options').style.display = 'block';
 };
 
 var solveTest = function() {

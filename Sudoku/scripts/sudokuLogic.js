@@ -39,7 +39,7 @@ var solve = function(a, change) {
   return change;
 };
 
-var setValuesSingleHint = function(a) {
+var setValuesSingleHint = function() {
   for(var i = 0; i < 3 ; i++) {
     for (var j = 0; j < 3; j++) {
       for (var k = 0; k < 3; k++) {
@@ -54,26 +54,11 @@ var setValuesSingleHint = function(a) {
       }
     }
   }
+  setHintsBySweep();
   updateVisual(a);
 };
 
-setHintsSimple = function(a) {
-  for(var i = 0; i < 3 ; i++) {
-    for (var j = 0; j < 3; j++) {
-      for (var k = 0; k < 3; k++) {
-        for (var l = 0; l < 3; l++) {
-          ind = (27*i) + (9*j) + (3*k) + l;
-          if(validNum(a[i][j][k][l].value)) {
-            setHintValue(a, i, j, k, l);
-          }
-        }
-      }
-    }
-  }
-  updateVisual(a);
-};
-
-var setHintsByGather = function(a) {
+var setValuesByGather = function() {
   for(var i = 0; i < 3 ; i++) {
     for (var j = 0; j < 3; j++) {
       for (var k = 0; k < 3; k++) {
@@ -85,7 +70,60 @@ var setHintsByGather = function(a) {
       }
     }
   }
+  setHintsBySweep();
   updateVisual(a);
+};
+
+setHintsBySweep = function() {
+  for(var i = 0; i < 3 ; i++) {
+    for (var j = 0; j < 3; j++) {
+      for (var k = 0; k < 3; k++) {
+        for (var l = 0; l < 3; l++) {
+          ind = (27*i) + (9*j) + (3*k) + l;
+          if(validNum(a[i][j][k][l].value)) {
+            sweepHints(a, i, j, k, l);
+          }
+        }
+      }
+    }
+  }
+  updateVisual(a);
+};
+
+var setHintsByBullet = function() {
+  var change = false;
+  var hints = [];
+
+  for(var i = 0; i < 3 ; i++) {
+    for (var j = 0; j < 3; j++) {
+      for (var hint = 1; hint < 10; hint++) {
+        var row = [];
+        var col = [];
+        for (var k = 0; k < 3; k++) {
+          for (var l = 0; l < 3; l++) {
+            if(!validNum(a[i][j][k][l].value)) {
+              hints = getHints(a[i][j][k][l]);
+              for (var count = 0; count < hints.length; count++) {
+                var curHint = hints[count];
+                if(curHint === hint) {
+                  row.push(k);
+                  col.push(l);
+                }
+              }
+            }
+          }
+        }
+        if(allSame(row)) {
+          change = (change || clearRow(a, i, j, row[0], hint));
+        }
+        if(allSame(col)) {
+          change = (change || clearCol(a, i, j, col[0], hint));
+        }
+      }
+    }
+  }
+  updateVisual(a);
+  return change;
 };
 
 var sweepHints = function(a, i, j, k, l) {
@@ -120,11 +158,11 @@ var sweepHints = function(a, i, j, k, l) {
 };
 
 var gatherHints = function(a, i, j, k, l, change) {
-  var num, curr, found = true, change = false;
+  var num, curr, found = false, change = false;
   var hints = getHints(a[i][j][k][l]);
 
   for (var count = 0; count < hints.length; count++) {
-    if(!found){
+    //if(!found){
       found = false;
       num = hints[count];
       for (var m = 0; m < 3; m++) {
@@ -138,9 +176,9 @@ var gatherHints = function(a, i, j, k, l, change) {
         }
       }
 
-    if (!found) {
-      a[i][j][k][l].value = num;
-        change = true;
+      if (!found) {
+        a[i][j][k][l].value = num;
+          change = true;
       }
       else {
         found = false;
@@ -178,44 +216,8 @@ var gatherHints = function(a, i, j, k, l, change) {
           }
         }
       }
-    }
+    //}
   }
-  return change;
-};
-
-var setHintsByBullet = function(a) {
-  var change = false;
-  var hints = [];
-
-  for(var i = 0; i < 3 ; i++) {
-    for (var j = 0; j < 3; j++) {
-      for (var hint = 1; hint < 10; hint++) {
-        var row = [];
-        var col = [];
-        for (var k = 0; k < 3; k++) {
-          for (var l = 0; l < 3; l++) {
-            if(!validNum(a[i][j][k][l].value)) {
-              hints = getHints(a[i][j][k][l]);
-              for (var count = 0; count < hints.length; count++) {
-                var curHint = hints[count];
-                if(curHint === hint) {
-                  row.push(k);
-                  col.push(l);
-                }
-              }
-            }
-          }
-        }
-        if(allSame(row)) {
-          change = (change || clearRow(a, i, j, row[0], hint));
-        }
-        if(allSame(col)) {
-          change = (change || clearCol(a, i, j, col[0], hint));
-        }
-      }
-    }
-  }
-  updateVisual(a);
   return change;
 };
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head lang="en">
-    <script type="text/javascript" src="sudokuScript.js"></script>
-    <script type="text/javascript" src="sudokuLogic.js"></script>
+    <script type="text/javascript" src="scripts/sudokuScript.js"></script>
+    <script type="text/javascript" src="scripts/sudokuLogic.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href="styles/sudokuStyle.css" type="text/css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -1105,9 +1105,11 @@
     <button type=button onClick="load()">Load</button>
     <button id="test" type=button onClick="test()">Load Test Sudoku</button>
     <button id="solve" type=button onClick="solveTest()">Solve!</button>
-    <button class="options" type=button onClick="solveTest()">Solve!</button>
-    <button class="options" type=button onClick="solveTest()">Solve!</button>
-    <button class="options" type=button onClick="solveTest()">Solve!</button>
+    <div id="options">
+      <button class="options" type=button onClick="setValuesSingleHint()">set values: single hint</button>
+      <button class="options" type=button onClick="setValuesByGather()">set values: gather</button>
+      <button class="options" type=button onClick="setHintsByBullet()">set hints: bullet</button>
+    </div>
     <div id="str"></div>
   </body>
 </html>
