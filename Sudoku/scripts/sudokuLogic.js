@@ -162,13 +162,30 @@ var gatherHints = function(a, i, j, k, l, change) {
   var hints = getHints(a[i][j][k][l]);
 
   for (var count = 0; count < hints.length; count++) {
-    //if(!found){
+    found = false;
+    num = hints[count];
+    for (var m = 0; m < 3; m++) {
+      for (var n = 0; n < 3; n++) {
+        if((!validNum(a[i][j][m][n].value)) && ((m !== k) || (n !== l))) {
+          curr = getHints(a[i][j][m][n]);
+          for (var curCount = 0; curCount < curr.length; curCount++) {
+            var current = curr[curCount];
+            if(num === current) { found = true; }
+          }
+        }
+      }
+    }
+
+    if (!found) {
+      a[i][j][k][l].value = num;
+        change = true;
+    }
+    else {
       found = false;
-      num = hints[count];
       for (var m = 0; m < 3; m++) {
         for (var n = 0; n < 3; n++) {
-          if((!validNum(a[i][j][m][n].value)) && ((m !== k) || (n !== l))) {
-            curr = getHints(a[i][j][m][n]);
+          if((!validNum(a[i][m][k][n].value)) && ((m !== j) || (n !== l))) {
+            curr = getHints(a[i][m][k][n]);
             for (var curCount = 0; curCount < curr.length; curCount++) {
               if(num === curr[curCount]) { found = true; }
             }
@@ -178,14 +195,14 @@ var gatherHints = function(a, i, j, k, l, change) {
 
       if (!found) {
         a[i][j][k][l].value = num;
-          change = true;
+        change = true;
       }
       else {
         found = false;
         for (var m = 0; m < 3; m++) {
           for (var n = 0; n < 3; n++) {
-            if((!validNum(a[i][m][k][n].value)) && ((m !== j) || (n !== l))) {
-              curr = getHints(a[i][m][k][n]);
+            if((!validNum(a[m][j][n][l].value)) && ((m !== i) || (n !== k))) {
+              curr = getHints(a[m][j][n][l]);
               for (var curCount = 0; curCount < curr.length; curCount++) {
                 if(num === curr[curCount]) { found = true; }
               }
@@ -197,26 +214,8 @@ var gatherHints = function(a, i, j, k, l, change) {
           a[i][j][k][l].value = num;
           change = true;
         }
-        else {
-          found = false;
-          for (var m = 0; m < 3; m++) {
-            for (var n = 0; n < 3; n++) {
-              if((!validNum(a[m][j][n][l].value)) && ((m !== i) || (n !== k))) {
-                curr = getHints(a[m][j][n][l]);
-                for (var curCount = 0; curCount < curr.length; curCount++) {
-                  if(num === curr[curCount]) { found = true; }
-                }
-              }
-            }
-          }
-
-          if (!found) {
-            a[i][j][k][l].value = num;
-            change = true;
-          }
-        }
       }
-    //}
+    }
   }
   return change;
 };
