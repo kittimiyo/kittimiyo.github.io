@@ -126,6 +126,7 @@ var setHintsByBullet = function() {
   return change;
 };
 
+//todo: add value change function w/ hints and visual update
 var sweepHints = function(a, i, j, k, l) {
   var num = a[i][j][k][l].value;
   var curr;
@@ -178,6 +179,8 @@ var gatherHints = function(a, i, j, k, l, change) {
 
     if (!found) {
       a[i][j][k][l].value = num;
+      sweepHints(a, i, j, k, l);
+      updateVisual(a);
         change = true;
     }
     else {
@@ -195,6 +198,8 @@ var gatherHints = function(a, i, j, k, l, change) {
 
       if (!found) {
         a[i][j][k][l].value = num;
+        sweepHints(a, i, j, k, l);
+        updateVisual(a);
         change = true;
       }
       else {
@@ -212,6 +217,8 @@ var gatherHints = function(a, i, j, k, l, change) {
 
         if (!found) {
           a[i][j][k][l].value = num;
+          sweepHints(a, i, j, k, l);
+          updateVisual(a);
           change = true;
         }
       }
