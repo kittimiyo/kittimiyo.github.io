@@ -16,7 +16,8 @@ for (var i=0;i<3;i++) {
         a[i][j][k][l] = {
           hint: [1,2,3,4,5,6,7,8,9],
           value: 0,
-          index: (27*i) + (9*j) + (3*k) + l
+          index: (27*i) + (9*j) + (3*k) + l,
+          change: false
         }
       }
     }
@@ -25,8 +26,8 @@ for (var i=0;i<3;i++) {
 
 var validNum = function(val) {
   return  ((val === 1) || (val === 2) || (val === 3)
-              || (val === 4) || (val === 5) || (val === 6)
-              || (val === 7) || (val === 8) || (val === 9));
+        || (val === 4) || (val === 5) || (val === 6)
+        || (val === 7) || (val === 8) || (val === 9));
 };
 
 var getHints = function(cell) {
@@ -90,30 +91,35 @@ var load = function() {
 };
 
 var updateVisual = function(a) {
-  var values = document.getElementsByClassName("inp");
-  var hints = document.getElementsByClassName("hnt");
-  var ind;
+
 
   for(var i = 0; i < 3 ; i++) {
     for (var j = 0; j < 3; j++) {
       for (var k = 0; k < 3; k++) {
         for (var l = 0; l < 3; l++) {
-          ind = (27*i) + (9*j) + (3*k) + l;
-          if(validNum(a[i][j][k][l].value)) {
-            values[ind].value = a[i][j][k][l].value;
-            for (var m = 0; m < 3; m++) {
-              for (var n = 0; n < 3; n++) {
-                hints[ind].getElementsByClassName('row')[m].getElementsByTagName('li')[n].innerText = '';
-              }
-            }
-          } else {
-            for (var o = 0; o < 3; o++) {
-              for (var p = 0; p < 3; p++) {
-                hints[ind].getElementsByClassName('row')[o].getElementsByTagName('li')[p].innerText = a[i][j][k][l].hint[3*o + p];
-              }
-            }
-          }
+          updateVisualCell(a, i, j, k, l);
         }
+      }
+    }
+  }
+};
+
+var updateVisualCell = function(a, i, j, k, l) {
+  var values = document.getElementsByClassName("inp");
+  var hints = document.getElementsByClassName("hnt");
+  var ind = (27*i) + (9*j) + (3*k) + l;
+
+  if(validNum(a[i][j][k][l].value)) {
+    values[ind].value = a[i][j][k][l].value;
+    for (var m = 0; m < 3; m++) {
+      for (var n = 0; n < 3; n++) {
+        hints[ind].getElementsByClassName('row')[m].getElementsByTagName('li')[n].innerText = '';
+      }
+    }
+  } else {
+    for (var o = 0; o < 3; o++) {
+      for (var p = 0; p < 3; p++) {
+        hints[ind].getElementsByClassName('row')[o].getElementsByTagName('li')[p].innerText = a[i][j][k][l].hint[3*o + p];
       }
     }
   }
