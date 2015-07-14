@@ -169,33 +169,6 @@ var test = function() {
   }
 
   setHintsBySweep();
-  updateVisual(a);
-
-  setHintsByBullet();
-  setHintsByBullet();
-  setHintsByBullet();
-  setHintsByBullet();
-  setHintsByBullet();
-  setHintsByBullet();
-  setHintsByBullet();
-  setHintsByBullet();
-  setHintsByBullet();
-  setHintsByBullet();
-  setHintsByBullet();
-
-  setValuesSingleHint();
-  setValuesSingleHint();
-  setValuesSingleHint();
-  setValuesSingleHint();
-  setValuesSingleHint();
-  setValuesSingleHint();
-  setValuesSingleHint();
-  setValuesSingleHint();
-
-  setHintsByBullet();
-  setHintsByBullet();
-  setHintsByBullet();
-  setHintsByBullet();
 
   document.getElementById('solve').style.display = 'block';
   document.getElementById('test').style.display = 'none';
