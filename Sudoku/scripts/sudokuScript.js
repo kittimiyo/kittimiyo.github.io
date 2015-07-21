@@ -9,6 +9,8 @@ var a = [[[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[
   [ [[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]] ],
   [ [[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]]]];
 
+a.change = false;
+
 for (var i=0;i<3;i++) {
   for(var j=0;j<3;j++) {
     for (var k=0;k<3;k++) {
@@ -16,8 +18,7 @@ for (var i=0;i<3;i++) {
         a[i][j][k][l] = {
           hint: [1,2,3,4,5,6,7,8,9],
           value: 0,
-          index: (27*i) + (9*j) + (3*k) + l,
-          change: false
+          index: (27*i) + (9*j) + (3*k) + l
         }
       }
     }
@@ -173,7 +174,7 @@ var test = function() {
 
   document.getElementById('solve').style.display = 'block';
   document.getElementById('test').style.display = 'none';
-  document.getElementById('options').style.display = 'block';
+  //document.getElementById('options').style.display = 'block';
 };
 
 var solveTest = function() {
