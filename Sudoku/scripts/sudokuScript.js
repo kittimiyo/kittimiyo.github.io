@@ -5,9 +5,9 @@
 //todo: limit minimum number of integers to 17
 //require example: var logic = require('./sudokuLogic')
 
-var a = [[[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]] ],
-  [ [[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]] ],
-  [ [[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]]]];
+var a = [[[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]]],
+  [[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]]],
+  [[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]]]];
 
 a.change = false;
 
@@ -66,7 +66,7 @@ var load = function() {
             } else {
               st += "<br>" + val;
               numberFound = true;
-              console.log("ind: " + ind + " value: " + val);
+              console.log("  inputs[", ind, "] = ", val, ";");
             }
             a[i][j][k][l].value = Number(val);
           }
@@ -127,7 +127,7 @@ var updateVisualCell = function(a, i, j, k, l) {
 };
 
 
-var test = function() {
+var testSud1 = function() {
   var inputs = [];
   inputs[0] = 5;
   inputs[5] = 7;
@@ -173,7 +173,72 @@ var test = function() {
   updateVisual(a);
 
   document.getElementById('solve').style.display = 'block';
-  document.getElementById('test').style.display = 'none';
+
+  var tests = document.getElementsByClassName('test');
+  var i;
+  for (i = 0; i < tests.length; i++) {
+    tests[i].style.display = 'none';
+  }
+  //document.getElementById('options').style.display = 'block';
+};
+
+var testSud2 = function() {
+  var inputs = [];
+  inputs[2] = 1;
+  inputs[5] = 6;
+  inputs[7] = 4;
+  inputs[12] = 3;
+  inputs[14] = 9;
+  inputs[17] = 7;
+  inputs[19] = 2;
+  inputs[22] = 4;
+  inputs[23] = 8;
+  inputs[25] = 1;
+  inputs[31] = 6;
+  inputs[32] = 4;
+  inputs[34] = 2;
+  inputs[35] = 8;
+  inputs[36] = 4;
+  inputs[39] = 1;
+  inputs[41] = 2;
+  inputs[44] = 5;
+  inputs[45] = 5;
+  inputs[46] = 3;
+  inputs[48] = 8;
+  inputs[49] = 9;
+  inputs[55] = 1;
+  inputs[57] = 6;
+  inputs[58] = 9;
+  inputs[61] = 3;
+  inputs[63] = 7;
+  inputs[66] = 2;
+  inputs[68] = 8;
+  inputs[73] = 5;
+  inputs[75] = 1;
+  inputs[78] = 2;
+
+  for(var i = 0; i < 3 ; i++) {
+    for (var j = 0; j < 3; j++) {
+      for (var k = 0; k < 3; k++) {
+        for (var l = 0; l < 3; l++) {
+          ind = (27*i) + (9*j) + (3*k) + l;
+          if(inputs[ind] !== undefined) { a[i][j][k][l].value = inputs[ind] }
+          else a[i][j][k][l].value = 0;
+        }
+      }
+    }
+  }
+
+  setHintsBySweep();
+  updateVisual(a);
+
+  document.getElementById('solve').style.display = 'block';
+
+  var tests = document.getElementsByClassName('test');
+  var i;
+  for (i = 0; i < tests.length; i++) {
+    tests[i].style.display = 'none';
+  }
   //document.getElementById('options').style.display = 'block';
 };
 

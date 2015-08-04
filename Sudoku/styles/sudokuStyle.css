@@ -110,7 +110,7 @@ table {
     display: none;
 }
 
-#test {
+.test {
     width: 200px;
 }
 
@@ -212,6 +212,7 @@ td table {
     left: 0;
     width: 37px;
     z-index: 300;
+    pointer-events: none;
 }
 
 ul.row {
