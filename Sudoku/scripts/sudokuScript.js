@@ -92,8 +92,6 @@ var load = function() {
 };
 
 var updateVisual = function(a) {
-
-
   for(var i = 0; i < 3 ; i++) {
     for (var j = 0; j < 3; j++) {
       for (var k = 0; k < 3; k++) {
@@ -104,6 +102,7 @@ var updateVisual = function(a) {
     }
   }
 };
+
 
 var updateVisualCell = function(a, i, j, k, l) {
   var values = document.getElementsByClassName("inp");
@@ -157,29 +156,7 @@ var testSud1 = function() {
   inputs[73] = 5;
   inputs[77] = 2;
 
-  for(var i = 0; i < 3 ; i++) {
-    for (var j = 0; j < 3; j++) {
-      for (var k = 0; k < 3; k++) {
-        for (var l = 0; l < 3; l++) {
-          ind = (27*i) + (9*j) + (3*k) + l;
-          if(inputs[ind] !== undefined) { a[i][j][k][l].value = inputs[ind] }
-          else a[i][j][k][l].value = 0;
-        }
-      }
-    }
-  }
-
-  setHintsBySweep();
-  updateVisual(a);
-
-  document.getElementById('solve').style.display = 'block';
-
-  var tests = document.getElementsByClassName('test');
-  var i;
-  for (i = 0; i < tests.length; i++) {
-    tests[i].style.display = 'none';
-  }
-  //document.getElementById('options').style.display = 'block';
+  setupSudoku(inputs)
 };
 
 var testSud2 = function() {
@@ -217,6 +194,10 @@ var testSud2 = function() {
   inputs[75] = 1;
   inputs[78] = 2;
 
+  setUpSudoku(inputs)
+};
+
+var setUpSudoku = function(inputs) {
   for(var i = 0; i < 3 ; i++) {
     for (var j = 0; j < 3; j++) {
       for (var k = 0; k < 3; k++) {
@@ -239,18 +220,4 @@ var testSud2 = function() {
   for (i = 0; i < tests.length; i++) {
     tests[i].style.display = 'none';
   }
-  //document.getElementById('options').style.display = 'block';
-};
-
-var solveTest = function() {
-  var change = true;
-  while (change) {
-    change = solveLoop(a);
-  }
-};
-
-var solveLoop = function(a, change) {
-  setHints(a);
-  updateSudoku(a);
-  return solve(a, change);
 };

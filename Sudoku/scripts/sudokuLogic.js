@@ -2,26 +2,41 @@
  * Created by Sylvie on 6/18/15.
  */
 
-//todo: create new solve function
-    //todo: use a's change value to create solve loop
 var solve = function() {
-  a.change = true;
-  var ct = 0;
-  while(a.change) {
+  runLoop(true);
+  solveLoop(0);
+};
+
+var solveLoop = function(ct) {
+  setTimeout(function() {
     console.log('looping: ', ct);
     ct++;
     a.change = false;
     setValuesSingleHint();
     setValuesByGather();
     setHintsByBullet();
-  }
+    if(a.change) { solveLoop(ct); }
+    //if(a.change) { addCalls([{ fcn: solveLoop, args: [ct] }]); }
+    //else { addCalls([{ fcn: stopLoop, args: [] }]); }
+  else { stopLoop(); }
+  }, 1000);
 };
 
 var setValue = function(a, i, j, k, l, val) {
+  var temp = a[i][j][k][l].value;
+
   a[i][j][k][l].value = val;
   sweepHints(a, i, j, k, l);
   updateVisualCell(a, i, j, k, l);
   a.change = true;
+
+  //if(validNum(a[i][j][k][l].value) && !(temp === val)) {
+  //  addCalls([
+  //    { fcn: sweepHints, args: [a, i, j, k, l] },
+  //    { fcn: updateVisualCell, args: [a, i, j, k, l] }
+  //  ]);
+  //  a.change = true;
+  //}
 };
 
 var removeHint = function(a, i, j, k, l, ind) {
