@@ -70,7 +70,7 @@ table {
     font-family: 'Raleway', sans-serif;
     font-size: 50px;
     text-align: center;
-    margin: auto;
+    margin: auto auto 70px auto;
     border: 5px solid #8E8E8E;
     border-radius: 15px;
 
@@ -78,19 +78,29 @@ table {
 
 button {
     display: block;
-    position: relative;
-    margin: 0 auto;
+    margin: 12px auto 0px auto;
     border: 2px solid #c5c5c5;
     padding: 4px;
     border-radius: 2px;
     background-color: #DFDFDF;
     font-size: 20px;
     font-family: 'Raleway', sans-serif;
-    width: 81px;
 }
 button:hover {
     border: 3px solid #8E8E8E;
     padding: 3px;
     font-weight: bold;
     cursor: pointer;
+}
+
+#darwin {
+
+}
+
+#sudoku {
+
+}
+
+#sudoku_backbone {
+
 }

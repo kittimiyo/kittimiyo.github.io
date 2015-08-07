@@ -1,0 +1,16 @@
+{
+  "name": "sudoku_backbone",
+  "version": "0.0.0",
+  "dependencies": {
+    "backbone": "~1.2.1"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "backbone": "~1.2.1"
+  }
+}
