@@ -3,4 +3,4 @@
 *.xml
 .idea/*
 
-Sudoku_Backbone_/bower_components
+sudoku_backbone/bower_components
