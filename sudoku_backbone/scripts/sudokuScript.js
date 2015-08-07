@@ -99,12 +99,14 @@ var load = function(a) {
   console.log(st);
 };
 
-var updateVisual = function(a) {
+var updateVisual = function(a, hideHints) {
+  a = a || main;
+
   for(var i = 0; i < 3 ; i++) {
     for (var j = 0; j < 3; j++) {
       for (var k = 0; k < 3; k++) {
         for (var l = 0; l < 3; l++) {
-          updateVisualCell(a, i, j, k, l);
+          updateVisualCell(a, i, j, k, l, hideHints);
         }
       }
     }
@@ -112,7 +114,7 @@ var updateVisual = function(a) {
 };
 
 
-var updateVisualCell = function(a, i, j, k, l) {
+var updateVisualCell = function(a, i, j, k, l, hideHints) {
   a = a || main;
 
   var values = document.getElementsByClassName("inp");
@@ -127,9 +129,12 @@ var updateVisualCell = function(a, i, j, k, l) {
       }
     }
   } else {
-    for (var o = 0; o < 3; o++) {
-      for (var p = 0; p < 3; p++) {
-        hints[ind].getElementsByClassName('row')[o].getElementsByTagName('li')[p].innerText = a[i][j][k][l].hint[3*o + p];
+    values[ind].value = '';
+    if(!hideHints) {
+      for (var o = 0; o < 3; o++) {
+        for (var p = 0; p < 3; p++) {
+          hints[ind].getElementsByClassName('row')[o].getElementsByTagName('li')[p].innerText = a[i][j][k][l].hint[3 * o + p];
+        }
       }
     }
   }
@@ -208,7 +213,7 @@ var testSud2 = function() {
 };
 
 var setUpSudoku = function(inputs) {
-  var a = Sudoku(inputs);
+  var a = new Sudoku(inputs);
   main = a;
 
   setHintsBySweep(a);
@@ -246,5 +251,5 @@ var reset = function(a) {
 
   a.reset();
 
-  updateVisual(a);
+  updateVisual(a, true);
 };
