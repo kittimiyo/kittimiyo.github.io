@@ -5,25 +5,27 @@
 //todo: limit minimum number of integers to 17
 //require example: var logic = require('./sudokuLogic')
 
-var a = [[[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]]],
-  [[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]]],
-  [[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]]]];
+//var a = [[[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]]],
+//  [[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]]],
+//  [[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]],[[1,1,1],[1,1,1],[1,1,1]]]];
+//
+//a.change = false;
+//
+//for (var i=0;i<3;i++) {
+//  for(var j=0;j<3;j++) {
+//    for (var k=0;k<3;k++) {
+//      for (var l=0;l<3;l++) {
+//        a[i][j][k][l] = {
+//          hint: [1,2,3,4,5,6,7,8,9],
+//          value: 0,
+//          index: (27*i) + (9*j) + (3*k) + l
+//        }
+//      }
+//    }
+//  }
+//}
 
-a.change = false;
-
-for (var i=0;i<3;i++) {
-  for(var j=0;j<3;j++) {
-    for (var k=0;k<3;k++) {
-      for (var l=0;l<3;l++) {
-        a[i][j][k][l] = {
-          hint: [1,2,3,4,5,6,7,8,9],
-          value: 0,
-          index: (27*i) + (9*j) + (3*k) + l
-        }
-      }
-    }
-  }
-}
+var main;
 
 var validNum = function(val) {
   return  ((val === 1) || (val === 2) || (val === 3)
@@ -44,9 +46,12 @@ var getHints = function(cell) {
 
 var st, err, ind, val, numberFound = false;
 
-var load = function() {
+var load = function(a) {
+  a = a || main;
+
   var inputs = document.getElementsByClassName("inp");
   var valid = true;
+
   st='';
   err='';
   for(var i = 0; i < 3; i++) {
@@ -76,15 +81,18 @@ var load = function() {
       }
     }
   }
+
   if(valid && numberFound) {
     st += "<br>Inputs are valid!";
     document.getElementById('solve').style.display = 'block';
     document.getElementById('test').style.display = 'none';
   }
+
   if(!numberFound) {
     if(err.length > 0) { err += '<br>'; }
     err += "<br>No valid numbers entered."
   }
+
   document.getElementById("str").innerHTML = st;
   document.getElementById("msg").innerHTML = err;
   numberFound = false;
@@ -105,6 +113,8 @@ var updateVisual = function(a) {
 
 
 var updateVisualCell = function(a, i, j, k, l) {
+  a = a || main;
+
   var values = document.getElementsByClassName("inp");
   var hints = document.getElementsByClassName("hnt");
   var ind = (27*i) + (9*j) + (3*k) + l;
@@ -156,7 +166,7 @@ var testSud1 = function() {
   inputs[73] = 5;
   inputs[77] = 2;
 
-  setupSudoku(inputs)
+  setUpSudoku(inputs)
 };
 
 var testSud2 = function() {
@@ -198,19 +208,10 @@ var testSud2 = function() {
 };
 
 var setUpSudoku = function(inputs) {
-  for(var i = 0; i < 3 ; i++) {
-    for (var j = 0; j < 3; j++) {
-      for (var k = 0; k < 3; k++) {
-        for (var l = 0; l < 3; l++) {
-          ind = (27*i) + (9*j) + (3*k) + l;
-          if(inputs[ind] !== undefined) { a[i][j][k][l].value = inputs[ind] }
-          else a[i][j][k][l].value = 0;
-        }
-      }
-    }
-  }
+  var a = Sudoku(inputs);
+  main = a;
 
-  setHintsBySweep();
+  setHintsBySweep(a);
   updateVisual(a);
 
   document.getElementById('solve').style.display = 'block';
@@ -220,4 +221,30 @@ var setUpSudoku = function(inputs) {
   for (i = 0; i < tests.length; i++) {
     tests[i].style.display = 'none';
   }
+};
+
+var solve = function(a) {
+  a = a || main;
+
+  document.getElementById('solve').style.display = 'none';
+  document.getElementById('reset').style.display = 'block';
+
+  solveSudoku(a);
+};
+
+var reset = function(a) {
+  a = a || main;
+
+  document.getElementById('solve').style.display = 'block';
+  document.getElementById('reset').style.display = 'none';
+
+  var tests = document.getElementsByClassName('test');
+  var i;
+  for (i = 0; i < tests.length; i++) {
+    tests[i].style.display = 'block';
+  }
+
+  a.reset();
+
+  updateVisual(a);
 };

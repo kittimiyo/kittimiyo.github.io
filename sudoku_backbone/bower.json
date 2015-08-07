@@ -2,7 +2,8 @@
   "name": "sudoku_backbone",
   "version": "0.0.0",
   "dependencies": {
-    "backbone": "~1.2.1"
+    "backbone": "~1.2.1",
+    "underscore": "~1.8.3"
   },
   "ignore": [
     "**/.*",
