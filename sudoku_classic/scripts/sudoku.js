@@ -19,7 +19,7 @@ var Sudoku = function(inputs) {
         for (l = 0; l < 3; l++) {
           ind = (27*i) + (9*j) + (3*k) + l;
           this[i][j][k][l] = {
-            hints: [1,2,3,4,5,6,7,8,9],
+            hint: [1,2,3,4,5,6,7,8,9],
             value: validNum(inputs[ind]) ? inputs[ind] : 0,
             index: ind
           };

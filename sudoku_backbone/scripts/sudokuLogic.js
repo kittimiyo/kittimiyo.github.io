@@ -12,7 +12,7 @@ var solveSudoku = function(a) {
 var solveLoop = function(a, ct) {
   a = a || main;
 
-  setTimeout(function() {
+  //setTimeout(function() {
     console.log('looping: ', ct);
     ct++;
     a.change = false;
@@ -23,7 +23,7 @@ var solveLoop = function(a, ct) {
     //if(a.change) { addCalls([{ fcn: solveLoop, args: [ct] }]); }
     //else { addCalls([{ fcn: stopLoop, args: [] }]); }
   else { stopLoop(); }
-  }, 1000);
+  //}, 1000);
 };
 
 var setValue = function(a, i, j, k, l, val) {

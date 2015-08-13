@@ -3,6 +3,7 @@
   <head lang="en">
     <script type="text/javascript" src="scripts/sudokuScript.js"></script>
     <script type="text/javascript" src="scripts/sudokuLogic.js"></script>
+    <script type="text/javascript" src="scripts/sudoku.js"></script>
     <script type="text/javascript" src="scripts/helpers.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <link href="styles/sudokuStyle.css" type="text/css" rel="stylesheet">
@@ -1104,10 +1105,11 @@
         </div>
       </div>
     </div>
-    <button type=button onClick="load()">Load</button>
-    <button class="test" type=button onClick="testSud1()">Load Test Sudoku 1</button>
-    <button class="test" type=button onClick="testSud2()">Load Test Sudoku 2</button>
+    <button id="load" type=button onClick="load()">Load</button>
+    <button class="test" type=button onClick="testSud(1)">Load Test Sudoku 1</button>
+    <button class="test" type=button onClick="testSud(2)">Load Test Sudoku 2</button>
     <button id="solve" type=button onClick="solve()">Solve!</button>
+    <button id="reset" type=button onClick="reset()">Reset</button>
     <div id="options">
       <button class="options" type=button onClick="setValuesSingleHint()">set values: single hint</button>
       <button class="options" type=button onClick="setValuesByGather()">set values: gather</button>

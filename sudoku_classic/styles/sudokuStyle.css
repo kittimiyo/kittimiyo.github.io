@@ -1,4 +1,4 @@
-/*----- [ Reset CSS ] -----*/
+/*----------------- [ Reset CSS ] -----------------*/
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -47,7 +47,8 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-/*----- [ End Reset CSS ] -----*/
+/*----------------- [ End Reset CSS ] -----------------*/
+
 
 @font-face {
     font-family: 'Raleway';
@@ -56,7 +57,6 @@ table {
     src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/WXRs6bFZChfzCx3pXob5o_Y6323mHUZFJMgTvxaG2iE.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
-
 
 #title {
     font-family: 'Raleway', sans-serif;
@@ -107,6 +107,10 @@ table {
 }
 
 #solve {
+    display: none;
+}
+
+#reset {
     display: none;
 }
 
