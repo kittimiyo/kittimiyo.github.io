@@ -10,7 +10,7 @@
 <div id="map"></div>
 <script type="text/javascript">
 
-  var map, lat, lng;
+  var map, marker, lat, lng;
 
   function createCenter(lat, lng) {
     return new google.maps.LatLng(lat, lng);
@@ -19,7 +19,13 @@
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: createCenter(35, 35),
-      zoom: 8
+      zoom: 12
+    });
+
+    marker = new google.maps.Marker({
+      position: map.getCenter(),
+      draggable: false,
+      map: map
     });
   }
 
@@ -34,7 +40,9 @@
   function interval() {
     setInterval(function() {
       navigator.geolocation.getCurrentPosition(GetLocation);
-      map.panTo(createCenter(lat, lng));
+//      map.panTo(createCenter(lat, lng));
+      map.setCenter({ lat: lat, lng: lng });
+      marker.setPosition(map.getCenter());
     }, 2000);
   }
 
