@@ -6,7 +6,7 @@
     #map { height: 100%; }
   </style>
 </head>
-<body>
+<body onLoad="interval()">
 <div id="map"></div>
 <script type="text/javascript">
 
@@ -31,14 +31,12 @@
 
   navigator.geolocation.getCurrentPosition(GetLocation);
 
-  window.document.ready(function() {
-
-
+  function interval() {
     setInterval(function() {
       navigator.geolocation.getCurrentPosition(GetLocation);
       map.panTo(createCenter(lat, lng));
     }, 2000);
-  });
+  }
 
 
 </script>
