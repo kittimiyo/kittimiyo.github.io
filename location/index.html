@@ -12,8 +12,8 @@
 
   var map, lat, lng;
 
-  function update() {
-
+  function createCenter(lat, lng) {
+    return new google.maps.LatLng(lat, lng);
   }
 
   function GetLocation(location){
@@ -34,7 +34,7 @@
 
   setInterval(function() {
     navigator.geolocation.getCurrentPosition(GetLocation);
-    initMap();
+    map.panTo(createCenter(lat, lng));
   }, 2000);
 
 
