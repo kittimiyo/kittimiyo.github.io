@@ -61,8 +61,8 @@ table {
 .welcome {
     position: relative;
     top: 50px;
-    padding-top: 40px;
-    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-bottom: 12px;
     background-color: #EABCFB;
     color: #5A5A5A;
     height: 140px;

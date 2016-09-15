@@ -15,7 +15,6 @@ var CellsHintsView = Backbone.View.extend({
   },
 
   render: function(){
-    debugger;
     var collection = this.collection;
     this.$el.html('<li></li><li></li><li></li>');
     this.$el.children().map(function(childIndex, li) {

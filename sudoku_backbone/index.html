@@ -46,6 +46,7 @@
         <div id="numY">
           1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>
         </div>
+        <div id="sudoku"></div>
       </div>
     </div>
     <button id="load" type=button onClick="load()">Load</button>
@@ -63,14 +64,14 @@
     <script>
       $(function(){
         // set up model objects
-        var cells = new CellCollection(sudokuData2);
+        var cells = new CellCollection(sudokuData);
         var app = new AppModel({cells: cells});
 
         // build a view for the top level of the whole app
         var appView = new AppView({model: app});
 
         // put the view onto the screen
-        $('#part').append(appView.render());
+        $('#sudoku').html(appView.renderInitial());
       });
     </script>
   </body>

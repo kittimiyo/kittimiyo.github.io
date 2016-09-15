@@ -122,75 +122,98 @@ var updateVisualCell = function(a, i, j, k, l, hideHints) {
 };
 
 
-var testSud = function(test) {
-  var inputs = [];
+//var testSud = function(test) {
+//  var inputs = [];
+//
+//  if(test === 1) {
+//    inputs[0] = 5;
+//    inputs[5] = 7;
+//    inputs[6] = 1;
+//    inputs[9] = 2;
+//    inputs[10] = 9;
+//    inputs[12] = 6;
+//    inputs[13] = 8;
+//    inputs[14] = 3;
+//    inputs[15] = 5;
+//    inputs[22] = 2;
+//    inputs[25] = 6;
+//    inputs[32] = 9;
+//    inputs[33] = 4;
+//    inputs[36] = 8;
+//    inputs[42] = 7;
+//    inputs[43] = 2;
+//    inputs[46] = 1;
+//    inputs[48] = 5;
+//    inputs[52] = 9;
+//    inputs[54] = 3;
+//    inputs[56] = 1;
+//    inputs[62] = 8;
+//    inputs[70] = 5;
+//    inputs[71] = 7;
+//    inputs[72] = 8;
+//    inputs[73] = 5;
+//    inputs[77] = 2;
+//  }
+//  else if(test === 2) {
+//    inputs[2] = 1;
+//    inputs[5] = 6;
+//    inputs[7] = 4;
+//    inputs[12] = 3;
+//    inputs[14] = 9;
+//    inputs[17] = 7;
+//    inputs[19] = 2;
+//    inputs[22] = 4;
+//    inputs[23] = 8;
+//    inputs[25] = 1;
+//    inputs[31] = 6;
+//    inputs[32] = 4;
+//    inputs[34] = 2;
+//    inputs[35] = 8;
+//    inputs[36] = 4;
+//    inputs[39] = 1;
+//    inputs[41] = 2;
+//    inputs[44] = 5;
+//    inputs[45] = 5;
+//    inputs[46] = 3;
+//    inputs[48] = 8;
+//    inputs[49] = 9;
+//    inputs[55] = 1;
+//    inputs[57] = 6;
+//    inputs[58] = 9;
+//    inputs[61] = 3;
+//    inputs[63] = 7;
+//    inputs[66] = 2;
+//    inputs[68] = 8;
+//    inputs[73] = 5;
+//    inputs[75] = 1;
+//    inputs[78] = 2;
+//  }
+//
+//  setUpSudoku(inputs)
+//};
 
+
+var testSud = function(test) {
+  var cells;
   if(test === 1) {
-    inputs[0] = 5;
-    inputs[5] = 7;
-    inputs[6] = 1;
-    inputs[9] = 2;
-    inputs[10] = 9;
-    inputs[12] = 6;
-    inputs[13] = 8;
-    inputs[14] = 3;
-    inputs[15] = 5;
-    inputs[22] = 2;
-    inputs[25] = 6;
-    inputs[32] = 9;
-    inputs[33] = 4;
-    inputs[36] = 8;
-    inputs[42] = 7;
-    inputs[43] = 2;
-    inputs[46] = 1;
-    inputs[48] = 5;
-    inputs[52] = 9;
-    inputs[54] = 3;
-    inputs[56] = 1;
-    inputs[62] = 8;
-    inputs[70] = 5;
-    inputs[71] = 7;
-    inputs[72] = 8;
-    inputs[73] = 5;
-    inputs[77] = 2;
+    // set up model objects
+    cells = new CellCollection(sudokuData1);
   }
   else if(test === 2) {
-    inputs[2] = 1;
-    inputs[5] = 6;
-    inputs[7] = 4;
-    inputs[12] = 3;
-    inputs[14] = 9;
-    inputs[17] = 7;
-    inputs[19] = 2;
-    inputs[22] = 4;
-    inputs[23] = 8;
-    inputs[25] = 1;
-    inputs[31] = 6;
-    inputs[32] = 4;
-    inputs[34] = 2;
-    inputs[35] = 8;
-    inputs[36] = 4;
-    inputs[39] = 1;
-    inputs[41] = 2;
-    inputs[44] = 5;
-    inputs[45] = 5;
-    inputs[46] = 3;
-    inputs[48] = 8;
-    inputs[49] = 9;
-    inputs[55] = 1;
-    inputs[57] = 6;
-    inputs[58] = 9;
-    inputs[61] = 3;
-    inputs[63] = 7;
-    inputs[66] = 2;
-    inputs[68] = 8;
-    inputs[73] = 5;
-    inputs[75] = 1;
-    inputs[78] = 2;
+    // set up model objects
+    cells = new CellCollection(sudokuData2);
   }
+  else return;
 
-  setUpSudoku(inputs)
+  var app = new AppModel({cells: cells});
+
+  // build a view for the top level of the whole app
+  var appView = new AppView({model: app});
+
+  // put the view onto the screen
+  $('#sudoku').html(appView.render());
 };
+
 
 var setUpSudoku = function(inputs) {
   var a = new Sudoku(inputs);

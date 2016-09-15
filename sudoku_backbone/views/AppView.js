@@ -8,7 +8,11 @@ var AppView = Backbone.View.extend({
     this.initialView = new InitialSudokuCellsView({collection: this.model.get('cells')});
   },
 
-  render: function() {
+  renderInitial: function() {
     return this.initialView.render();
+  },
+
+  render: function() {
+    return this.sudokuView.render();
   }
 });
