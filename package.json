@@ -4,7 +4,8 @@
   "description": "Wedding Site for Sylvie Bowden and Eric Petersen",
   "main": "homeScript.js",
   "scripts": {
-    "start": "firebase serve",
+    "build": "webpack",
+    "start": "webpack-dev-server --hot --inline",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,10 +18,22 @@
     "url": "https://github.com/kittimiyo/kittimiyo.github.io/issues"
   },
   "homepage": "https://github.com/kittimiyo/kittimiyo.github.io#readme",
+  "babel": {
+    "presets": ["react", "es2015"]
+  },
   "dependencies": {
-    "react": "^15.4.2"
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "6.16.0",
+    "babel-preset-es2015": "6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "webpack": "^1.14.0"
+    "file-loader": "^0.9.0",
+    "react-hot-loader": "^1.3.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }
