@@ -1,8 +1,5 @@
-# Live Website
+# Sylvie and Eric Wedding Website
 ### Running locally:
-install Firebase:
-
-```npm install -g firebase-tools```
 
 setup:
 
@@ -12,4 +9,4 @@ start:
 
 ```npm start```
 
-navigate to localhost:5000 to view
+navigate to localhost:8080 to view
