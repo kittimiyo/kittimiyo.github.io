@@ -10,7 +10,23 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
+      {
+        test: /\.css$/,
+      -       loaders: [
+  +       use: [
+  {
+    loader: "style-loader"
+  },
+  {
+    loader: "css-loader",
+  -           query: {
+  +           options: {
+    modules: true
+  }
+}
+]
+},
       {
         test: /\.jsx?$/, // Match both .js and .jsx files
         exclude: /node_modules/,
