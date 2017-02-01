@@ -9512,8 +9512,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!./../../node_modules/css-loader/index.js??ref--0-1!./app.css", function() {
-			var newContent = require("!!./../../node_modules/css-loader/index.js??ref--0-1!./app.css");
+		module.hot.accept("!!./../../node_modules/css-loader/index.js!./app.css", function() {
+			var newContent = require("!!./../../node_modules/css-loader/index.js!./app.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -9531,12 +9531,10 @@ exports = module.exports = __webpack_require__(84)();
 
 
 // module
-exports.push([module.i, "#_3zbB9ewn9kSdheIms4HGI8 {\n  background-image: url(" + __webpack_require__(99) + ");\n}", ""]);
+exports.push([module.i, "\n#app {\n  /* background image settings */\n  background-image: url(" + __webpack_require__(99) + ");\n  background-repeat: no-repeat;\n  -webkit-background-size: 100%;\n  background-size: 100%;\n\n  height: 700px;\n\n  text-align: center;\n}", ""]);
 
 // exports
-exports.locals = {
-	"app": "_3zbB9ewn9kSdheIms4HGI8"
-};
+
 
 /***/ }),
 /* 84 */
