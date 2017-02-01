@@ -9,7 +9,7 @@ const App = React.createClass({
           Sylvie & Eric<br/>
           June 24, 2017<br/>
           <br/>
-          Luther Burbank Center for the Arts???<br/>
+          Luther Burbank Center for the Arts<br/>
           Santa Rosa
         </h3>
       </div>

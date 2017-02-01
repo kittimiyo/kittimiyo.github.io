@@ -13,28 +13,34 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-      -       loaders: [
-  +       use: [
-  {
-    loader: "style-loader"
-  },
-  {
-    loader: "css-loader",
-  -           query: {
-  +           options: {
-    modules: true
-  }
-}
-]
-},
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          }
+        ]
+      },
       {
         test: /\.jsx?$/, // Match both .js and .jsx files
         exclude: /node_modules/,
-        loaders: ["react-hot", "babel-loader"]
+        use: [
+          {
+            loader: "react-hot-loader"
+          },
+          {
+            loader: "babel-loader"
+          }
+        ]
       },
       {
         test: /\.html$/,
         loader: "file?name=[name].[ext]"
+      },
+      {
+        test: /\.jpg$/,
+        loader: 'file-loader'
       }
     ]
   }
