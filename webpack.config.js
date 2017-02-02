@@ -6,7 +6,8 @@ module.exports = {
 
   output: {
     filename: "bundle.js",
-    path: __dirname + "/dist"
+    path: __dirname + "/dist",
+    publicPath: "/"
   },
 
   module: {
@@ -36,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: "file?name=[name].[ext]"
+        loader: "file-loader"
       },
       {
         test: /\.jpg$/,
