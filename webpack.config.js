@@ -44,6 +44,8 @@ module.exports = {
         loader: 'file-loader'
       }
     ]
-  }
+  },
+
+  devtool: "#inline-source-map"
 };
 

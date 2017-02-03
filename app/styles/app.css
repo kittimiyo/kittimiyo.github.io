@@ -1,12 +1,2 @@
-
 #app {
-  /* background image settings */
-  background-image: url('../resources/pooky_boatDay.jpg');
-  background-repeat: no-repeat;
-  -webkit-background-size: 100%;
-  background-size: 100%;
-
-  height: 700px;
-
-  text-align: center;
 }
