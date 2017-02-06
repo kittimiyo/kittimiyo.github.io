@@ -1,0 +1,57 @@
+#reservation-container {
+  .box {
+    border: 3px double black;
+    margin: 30px auto;
+    width: 350px;
+  }
+
+  .title {
+    font-size: 30px;
+    text-align: center;
+    border-bottom: solid 1px;
+  }
+
+  form.query {
+    margin: 15px auto;
+    text-align: center;
+
+    .text-input {
+      margin-bottom: 15px;
+      width: 200px;
+    }
+  }
+
+  form.results {
+    margin: 15px auto;
+    text-align: center;
+
+    .results-single {
+      margin: 20px 0;
+    }
+
+    .rsvp-name {
+      display: inline-flex;
+      width: 60%;
+
+      .name {
+        flex-grow: 1;
+        text-align: left;
+      }
+
+      .rsvp-q {
+        flex-grow: 1;
+        text-align: right;
+      }
+    }
+
+    .plus1-title {
+      display: inline-flex;
+      width: 55%;
+    }
+
+    .plus1-input {
+      display: inline-flex;
+      width: 55%;
+    }
+  }
+}

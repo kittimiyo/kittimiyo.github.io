@@ -1,7 +1,7 @@
 module.exports = {
   context: __dirname + "/app",
   entry: {
-    javascript: "./index.js"
+    javascript: "./index.jsx"
   },
 
   output: {
@@ -24,6 +24,20 @@ module.exports = {
         ]
       },
       {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: "sass-loader"
+          }
+        ]
+      },
+      {
         test: /\.jsx?$/, // Match both .js and .jsx files
         exclude: /node_modules/,
         use: [
@@ -31,7 +45,10 @@ module.exports = {
             loader: "react-hot-loader"
           },
           {
-            loader: "babel-loader"
+            loader: "babel-loader",
+            query: {
+              presets: ['es2015']
+            }
           }
         ]
       },
