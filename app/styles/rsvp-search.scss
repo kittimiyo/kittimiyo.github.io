@@ -6,24 +6,19 @@
     .text-input {
       margin: 5px 0;
       width: 200px;
-      //text-align: center;
 
       &::-webkit-input-placeholder {
-        color: red;
         text-align: center;
       }
       :-moz-placeholder {
         /* Firefox 18- */
-        color: red;
         text-align: center;
       }
       ::-moz-placeholder {
         /* Firefox 19+ */
-        color: red;
         text-align: center;
       }
       :-ms-input-placeholder {
-        color: red;
         text-align: center;
       }
     }
