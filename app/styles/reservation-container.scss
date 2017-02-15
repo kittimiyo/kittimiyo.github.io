@@ -1,8 +1,9 @@
 #reservation-container {
   display:  flex;
   color: #FFF;
+  height: inherit;
 
-  .rsvp-cat-pic-collapse {
+  .rsvp-cat-pic {
     /* background image settings */
     background-image: url('../resources/download_20150822_110147.jpg');
     background-repeat: no-repeat;
@@ -11,15 +12,12 @@
     background-position-y: 20%;
     background-position-x: 60%;
 
-    width: 335px;
-    height: 170px;
-    text-align: center;
+    flex-grow: 2;
   }
 
-  .box-collapse {
+  .box {
     background-color: #DAACD5;
-    height: 170px;
-    width: 510px;
+    flex-grow: 2;
   }
 
   .title {

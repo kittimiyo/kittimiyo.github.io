@@ -3,6 +3,7 @@ import DevTools from 'mobx-react-devtools';
 
 import '../styles/app.scss'
 import Header from './header.jsx';
+import ListBox from './list-box.jsx';
 import ReservationContainer from './reservation-container.jsx';
 
 class App extends React.Component {
@@ -14,7 +15,9 @@ class App extends React.Component {
     return (
       <div id="app">
         <Header/>
-        <ReservationContainer />
+        <ListBox>
+          <ReservationContainer />
+        </ListBox>
       </div>
     );
   }

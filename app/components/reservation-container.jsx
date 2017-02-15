@@ -91,8 +91,8 @@ class ReservationContainer extends React.Component {
 
     return (
       <div id="reservation-container">
-        <div className="rsvp-cat-pic-collapse"></div>
-        <div className="box-collapse">
+        <div className="rsvp-cat-pic"></div>
+        <div className="box">
           <div className="title">RSVP</div>
           <RSVPSearch />
           { gotResults }
