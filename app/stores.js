@@ -37,6 +37,6 @@ const validateQuery = value => {
   return !!value.length;
 };
 
-export {
-  RSVPStore
+export default {
+  RSVPStore: new RSVPStore()
 };

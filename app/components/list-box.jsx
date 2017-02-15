@@ -17,11 +17,12 @@ class ListBox extends React.Component {
   }
 
   select() {
-    if(!this.state.className) {
-      this.setState({className: 'active'});
-    } else {
-      this.setState({className: ''});
-    }
+    this.setState({className: 'active'});
+    //if(!this.state.className) {
+    //  this.setState({className: 'active'});
+    //} else {
+    //  this.setState({className: ''});
+    //}
   }
 
   render() {

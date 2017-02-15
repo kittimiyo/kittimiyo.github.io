@@ -1,84 +1,49 @@
 {
   "100": {
     "totalPeople": "notset",
-    "totalPossible": 4,
+    "family": "Smith",
     "names": [
       {
         "name": "John Smith",
         "rsvp": "notset",
-        "plus1": [
-          {
-            "name": "",
-            "rsvp": "notset"
-          },
-          {
-            "name": "",
-            "rsvp": "notset"
-          }
-        ]
+        "plus1": true
       },
       {
         "name": "Sally Smith",
         "rsvp": "notset",
-        "plus1": []
+        "plus1": false
       }
     ]
   },
   "101": {
     "totalPeople": "notset",
-    "totalPossible": 5,
+    "family": "Ramos",
     "names": [
       {
         "name": "Julie P. Ramos",
         "rsvp": "notset",
-        "plus1": [
-          {
-            "name": "",
-            "rsvp": "notset"
-          }
-        ]
+        "plus1": true
       },
       {
         "name": "Timmy Ramos-Jude",
         "rsvp": "notset",
-        "plus1": [
-          {
-            "name": "",
-            "rsvp": "notset"
-          }
-        ]
+        "plus1": true
       },
       {
         "name": "San Ramos",
         "rsvp": "notset",
-        "plus1": []
+        "plus1": false
       }
     ]
   },
   "102": {
     "totalPeople": "notset",
-    "totalPossible": 2,
+    "family": "Harrods",
     "names": [
       {
         "name": "Harris Harrods",
         "rsvp": "notset",
-        "plus1": [
-          {
-            "name": "",
-            "rsvp": "notset"
-          }
-        ]
-      }
-    ]
-  },
-  "103": {
-    "totalPeople": "notset",
-    "totalPossible": 1,
-    "names": [
-      {
-        "name": "Man Smith",
-        "rsvp": "notset",
-        "plus1": []
+        "plus1": false
       }
     ]
   }

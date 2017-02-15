@@ -11,14 +11,14 @@ class RSVPSearch extends React.Component {
       value: ''
     };
 
-    this.store = new this.props.RSVPStore();
+    this.store = this.props.RSVPStore;
 
     const query = querystring.parse(window.location.search.substr(1));
     // turn off query while designing 2/14
-    //if (query.code) {
-    //  console.log('code in query:', query);
-    //  this.store.setRSVPSearchResults(query.code);
-    //}
+    if (query.code) {
+      console.log('code in query:', query);
+      this.store.setRSVPSearchResults(query.code);
+    }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,13 +36,13 @@ class RSVPSearch extends React.Component {
   render() {
     return (
       <div id="rsvp-search">
-          <form className="query" onSubmit={this.handleSubmit}>
-            <input
-              className="text-input"
-              type="text" placeholder="enter code to search for reservation"
-              onChange={this.handleChange} /><br/>
-            <input type="submit" value="Search" />
-          </form>
+        <form className="query" onSubmit={this.handleSubmit}>
+          <input
+            className="text-input"
+            type="text" placeholder="enter code to search for reservation"
+            onChange={this.handleChange}/><br/>
+          <input type="submit" value="Search"/>
+        </form>
       </div>
     );
   }
