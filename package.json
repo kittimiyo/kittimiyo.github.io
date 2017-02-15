@@ -5,7 +5,7 @@
   "main": "app/app.jsx",
   "scripts": {
     "build": "rm -rf dist && webpack",
-    "start": "webpack-dev-server --hot --inline --progress --colors --output-public-path=/dist/",
+    "start": "webpack-dev-server --hot --inline --progress --colors --port 8081 --output-public-path=/dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -34,6 +34,7 @@
     "mobx": "^3.0.2",
     "mobx-react": "^4.1.0",
     "mobx-react-devtools": "^4.2.11",
+    "querystring": "^0.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
   },

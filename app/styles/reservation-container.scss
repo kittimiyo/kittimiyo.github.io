@@ -1,24 +1,32 @@
 #reservation-container {
-  .box {
-    border: 3px double black;
-    margin: 30px auto;
-    width: 350px;
+  display:  flex;
+  color: #FFF;
+
+  .rsvp-cat-pic-collapse {
+    /* background image settings */
+    background-image: url('../resources/download_20150822_110147.jpg');
+    background-repeat: no-repeat;
+    -webkit-background-size: 100%;
+    background-size: 110%;
+    background-position-y: 20%;
+    background-position-x: 60%;
+
+    width: 335px;
+    height: 170px;
+    text-align: center;
+  }
+
+  .box-collapse {
+    background-color: #DAACD5;
+    height: 170px;
+    width: 510px;
   }
 
   .title {
-    font-size: 30px;
+    font-size: 36px;
     text-align: center;
-    border-bottom: solid 1px;
-  }
-
-  form.query {
-    margin: 15px auto;
-    text-align: center;
-
-    .text-input {
-      margin-bottom: 15px;
-      width: 200px;
-    }
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    margin: 20px 0 0 0;
   }
 
   form.results {

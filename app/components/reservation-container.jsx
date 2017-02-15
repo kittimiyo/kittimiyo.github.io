@@ -1,7 +1,9 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
+import querystring from 'querystring';
 
 import '../styles/reservation-container.scss'
+import RSVPSearch from './rsvp-search.jsx'
 
 class ReservationContainer extends React.Component {
   constructor(props) {
@@ -16,9 +18,6 @@ class ReservationContainer extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.buildSearchResults = this.buildSearchResults.bind(this);
     this.buildPlus1Results = this.buildPlus1Results.bind(this);
-
-    // for debugging:
-    //this.store.getRSVPSearchResults('100');
   }
 
   handleChange(event) {
@@ -27,7 +26,7 @@ class ReservationContainer extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.store.getRSVPSearchResults(this.state.value);
+    this.store.setRSVPSearchResults(this.state.value);
   }
 
   buildSearchResults(results) {
@@ -56,6 +55,7 @@ class ReservationContainer extends React.Component {
                 {this.buildPlus1Results(value.plus1)}
               </div>);
           })}
+
         </form>
       )
     }
@@ -67,10 +67,8 @@ class ReservationContainer extends React.Component {
       return <div>
         {value.map((plus, ind) => {
           return (
-            <div>
-              <div
-                className="plus1-title"
-                key={'results_plus1' + ind}>
+            <div key={'results_plus1' + ind}>
+              <div className="plus1-title">
                 <div>Plus 1{value.length > 1 ? ` (${ind + 1})`: ''}</div>
               </div>
               <div className="plus1-input">
@@ -93,16 +91,11 @@ class ReservationContainer extends React.Component {
 
     return (
       <div id="reservation-container">
-        <div className="box">
+        <div className="rsvp-cat-pic-collapse"></div>
+        <div className="box-collapse">
           <div className="title">RSVP</div>
-          <form className="query" onSubmit={this.handleSubmit}>
-            <input
-              className="text-input"
-              type="text" placeholder="Code"
-              onChange={this.handleChange} /><br/>
-            <input type="submit" value="Search" />
-          </form>
-          {gotResults}
+          <RSVPSearch />
+          { gotResults }
         </div>
       </div>
     );

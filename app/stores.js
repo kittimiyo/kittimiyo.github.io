@@ -8,7 +8,7 @@ class RSVPStore {
       results: false,
 
       // functions
-      getRSVPSearchResults: action((searchValue) => {
+      setRSVPSearchResults: action((searchValue) => {
         let found = false;
         //console.log('in getRSVPResults, searchValue:', searchValue);
         if(validateQuery(searchValue)) {
