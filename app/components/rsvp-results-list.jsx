@@ -26,16 +26,17 @@ class RSVPResultsList extends React.Component {
       }
 
       return(
-        <div className="family-name">{results.family}
-          <form className="results">
-            {results.names.map((value, index) => {
-              console.log('in buildSearchResults, value:', value);
-              return (
-                <RSVPResult name={value.name} plus1={value.plus1} />
-              );
-            })}
-
-          </form>
+        <div id="rsvp-results-list">
+          <div className="family-name">{results.family}</div>
+          {results.names.map((value, index) => {
+            return (
+              <RSVPResult
+                key={"rsvp-result" + index}
+                name={value.name}
+                plus1={value.plus1}
+              />
+            );
+          })}
         </div>
       )
     }

@@ -1,18 +1,32 @@
 #rsvp-result {
-  display:  flex;
-  color: #FFF;
-
-  .box {
-    background-color: #DAACD5;
-    flex-grow: 2;
-  }
+  border: solid 2px;
+  flex-basis: content;
+  width: 85%;
+  margin: 10px 0;
 
   .name {
-    font-size: 36px;
-    text-align: center;
-    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
-    margin: 20px 0 0 0;
+    font-size: 21px;
+    margin: 5px 10px;
   }
+  
+  .attending-not-attending {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 18px;
 
+    &.with-guest {
+      justify-content: flex-start;
+    }
+  }
+  
+  .radio {
+    display: flex;
+    margin: 0 10px 7px 10px;
+
+    input {
+      margin: 5px 10px 0 0;
+    }
+  }
 
 }

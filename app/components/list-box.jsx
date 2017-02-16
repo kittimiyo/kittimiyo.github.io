@@ -11,7 +11,7 @@ class ListBox extends React.Component {
     super(props);
 
     this.state = {
-      className: ''
+      className: 'active'
     };
     this.select = this.select.bind(this);
   }
