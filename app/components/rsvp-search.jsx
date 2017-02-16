@@ -2,8 +2,8 @@ import React from 'react';
 import { observer, inject } from 'mobx-react';
 import querystring from 'querystring';
 
-import '../styles/rsvp-search.scss'
-import SearchMessage from './search-message.jsx'
+import '../styles/rsvp-search.scss';
+import LoadingSVG from './loading-svg.jsx';
 
 class RSVPSearch extends React.Component {
   constructor(props) {
@@ -18,12 +18,13 @@ class RSVPSearch extends React.Component {
     // turn off query while designing 2/14
     if (query.code) {
       console.log('code in query:', query);
-      this.store.setRSVPSearchResults(query.code);
+      this.store.getRSVP(query.code);
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.resetSearch = this.resetSearch.bind(this);
+    this.queryMessage = this.queryMessage.bind(this);
   }
 
   handleChange(event) {
@@ -32,7 +33,7 @@ class RSVPSearch extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.store.setRSVPSearchResults(this.state.value);
+    this.store.getRSVP(this.state.value);
   }
 
   resetSearch() {
@@ -40,13 +41,29 @@ class RSVPSearch extends React.Component {
     this.store.resetSearch();
   }
 
+  queryMessage(message) {
+    if(message === 'not found') {
+      return <div className="search-message">
+        No results found</div>;
+    }
+    if(message === 'invalid query') {
+      return <div className="search-message">
+        Please enter your 5-digit reservation code</div>;
+    } else {
+      return null;
+    }
+  }
+
   render() {
     return (
       <div id="rsvp-search">
-        {this.store.message ?
-          <SearchMessage message={this.store.message} /> :
-          this.store.results?
-          <div className="search-again" onClick={this.resetSearch}>search for another reservation</div> :
+        {this.store.searching ?
+          <div className="search-message">
+            <div>Searching</div>
+            <LoadingSVG />
+          </div> :
+          this.store.results ?
+          <div className="search-again" onClick={this.resetSearch}>click to search for another reservation</div> :
           <form className="query" onSubmit={this.handleSubmit}>
             <input
               className="text-input"
@@ -54,6 +71,7 @@ class RSVPSearch extends React.Component {
               onChange={this.handleChange}/><br/>
             <input type="submit" value="Search"/>
           </form>}
+        {this.queryMessage(this.store.message)}
       </div>
     );
   }

@@ -1,13 +1,20 @@
 #rsvp-results-list {
-  display:  flex;
-  flex-direction: column;
-  color: #666;
-  justify-content: center;
-  align-items: center;
+  form {
+    display:  flex;
+    flex-direction: column;
+    color: #666;
+    justify-content: center;
+    align-items: center;
 
-  .family-name {
-    text-align: center;
-    font-size: 24px;
-    margin: 15px 0 0 0;
+    .family-name {
+      text-align: center;
+      font-size: 24px;
+      margin: 15px 0 0 0;
+    }
+
+    .submit-rsvp {
+    }
   }
+
+
 }

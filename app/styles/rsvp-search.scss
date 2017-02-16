@@ -11,6 +11,13 @@
     }
   }
 
+  .search-message {
+    font-size: 14px;
+    flex-direction: column;
+    text-align: center;
+    color: #666;
+  }
+
   form.query {
     margin: 0 auto;
     text-align: center;
