@@ -3,6 +3,7 @@ import { observer, inject } from 'mobx-react';
 import querystring from 'querystring';
 
 import '../styles/rsvp-search.scss'
+import SearchMessage from './search-message.jsx'
 
 class RSVPSearch extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ class RSVPSearch extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.resetSearch = this.resetSearch.bind(this);
   }
 
   handleChange(event) {
@@ -33,16 +35,25 @@ class RSVPSearch extends React.Component {
     this.store.setRSVPSearchResults(this.state.value);
   }
 
+  resetSearch() {
+    this.setState({ value: '' });
+    this.store.resetSearch();
+  }
+
   render() {
     return (
       <div id="rsvp-search">
-        <form className="query" onSubmit={this.handleSubmit}>
-          <input
-            className="text-input"
-            type="text" placeholder="enter code to search for reservation"
-            onChange={this.handleChange}/><br/>
-          <input type="submit" value="Search"/>
-        </form>
+        {this.store.message ?
+          <SearchMessage message={this.store.message} /> :
+          this.store.results?
+          <div className="search-again" onClick={this.resetSearch}>search for another reservation</div> :
+          <form className="query" onSubmit={this.handleSubmit}>
+            <input
+              className="text-input"
+              type="text" placeholder="reservation code"
+              onChange={this.handleChange}/><br/>
+            <input type="submit" value="Search"/>
+          </form>}
       </div>
     );
   }

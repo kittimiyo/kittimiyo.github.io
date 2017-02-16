@@ -15,16 +15,6 @@ class RSVPResultsList extends React.Component {
     const results = this.store.results;
 
     if (results) {
-      if(results === 'not found') {
-        return <div>No results found for code</div>;
-      }
-      if(results === 'searching') {
-        return <div>Searching for invite</div>;
-      }
-      if(results === 'invalid query') {
-        return <div>Invalid query</div>;
-      }
-
       return(
         <div id="rsvp-results-list">
           <div className="family-name">{results.family}</div>

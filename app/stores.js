@@ -6,27 +6,31 @@ class RSVPStore {
     extendObservable(this, {
       // state data
       results: false,
+      message: '',
 
       // functions
       setRSVPSearchResults: action((searchValue) => {
-        let found = false;
-        //console.log('in getRSVPResults, searchValue:', searchValue);
         if(validateQuery(searchValue)) {
-          this.results = 'searching';
+          this.message = 'searching';
           const queryRef = firebaseApp.database().ref(searchValue);
           queryRef.once('value').then((snapshot) => {
-            console.log('in getRSVPSearchResults, found!', snapshot.val());
             const result = snapshot.val();
+            console.log('in getRSVPSearchResults, found!', result);
             if(result) {
-              found = true;
-              this.results = result;
+              //this.message = '';
+              //this.results = result;
             } else {
-              this.results = 'not found';
+              this.message = 'not found';
             }
           });
         } else {
-          this.results = 'invalid query';
+          this.message = 'invalid query';
         }
+      }),
+
+      resetSearch: action(() => {
+        this.message = '';
+        this.results = false;
       })
     })
   }
