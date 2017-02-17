@@ -48,7 +48,7 @@ class RSVPSearch extends React.Component {
     }
     if(message === 'invalid query') {
       return <div className="search-message">
-        Please enter your 5-digit reservation code</div>;
+        Please enter the 5-digit code from you invitation</div>;
     } else {
       return null;
     }
@@ -63,11 +63,11 @@ class RSVPSearch extends React.Component {
             <LoadingSVG />
           </div> :
           this.store.results ?
-          <div className="search-again" onClick={this.resetSearch}>click to search for another reservation</div> :
+          <div className="search-again" onClick={this.resetSearch}>click to search again</div> :
           <form className="query" onSubmit={this.handleSubmit}>
             <input
               className="text-input"
-              type="text" placeholder="reservation code"
+              type="text" placeholder="invitation code"
               onChange={this.handleChange}/><br/>
             <input type="submit" value="Search"/>
           </form>}

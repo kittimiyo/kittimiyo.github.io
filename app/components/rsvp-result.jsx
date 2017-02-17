@@ -6,7 +6,7 @@ class RSVPResult extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: ''
+      selected: this.props.rsvp
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -19,6 +19,7 @@ class RSVPResult extends React.Component {
     console.log('radio value:', value);
 
     this.props.handleChange(this.props.name, event.target.className);
+    this.setState({selected: event.target.className});
   }
 
   render() {
@@ -32,6 +33,7 @@ class RSVPResult extends React.Component {
               className="attending"
               type="radio"
               name={this.props.name}
+              checked={this.state.selected === 'attending'}
               onChange={this.handleChange}
             />
             <div className="option">Attending</div>
@@ -42,6 +44,7 @@ class RSVPResult extends React.Component {
               className="not-attending"
               type="radio"
               name={this.props.name}
+              checked={this.state.selected === 'not-attending'}
               onChange={this.handleChange}
             />
             <div className="option">Not Attending (with deepest regrets)</div>
@@ -55,6 +58,7 @@ class RSVPResult extends React.Component {
                 className="attending-with-guest"
                 type="radio"
                 name={this.props.name}
+                checked={this.state.selected === 'attending-with-guest'}
                 onChange={this.handleChange}
               />
               <div className="option">Attending with Guest</div>

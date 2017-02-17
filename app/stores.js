@@ -9,6 +9,8 @@ class RSVPStore {
       searching: false,
       query: '',
       message: '',
+      update: false,
+      saved: false,
 
       // functions
       getRSVP: action((searchValue) => {
@@ -23,6 +25,10 @@ class RSVPStore {
               this.message = '';
               this.searching = false;
               this.results = result;
+
+              if(result.totalPeople !== 'notset') {
+                this.update = true
+              }
             } else {
               this.searching = false;
               this.message = 'not found';
@@ -32,6 +38,7 @@ class RSVPStore {
         } else {
           this.searching = false;
           this.message = 'invalid query';
+          this.update = false;
         }
       }),
 
@@ -39,6 +46,7 @@ class RSVPStore {
         const queryRef = firebaseApp.database().ref(this.query);
         queryRef.set(newValues).then(() => {
           console.log('set values successfully');
+          this.saved = true;
         })
         .catch((e) => {
           console.log('set value problem:', e);
@@ -50,6 +58,7 @@ class RSVPStore {
         this.searching = false;
         this.results = false;
         this.query = '';
+        this.saved = false;
       })
     })
   }
@@ -57,7 +66,8 @@ class RSVPStore {
 
 // helper fcns
 const validateQuery = value => {
-  return !!value.length;
+  const isNum = /^[0-9]+$/.test(value);
+  return (value.length === 5 && isNum);
 };
 
 export default {

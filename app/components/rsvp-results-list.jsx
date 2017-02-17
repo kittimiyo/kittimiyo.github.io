@@ -11,7 +11,7 @@ class RSVPResultsList extends React.Component {
 
     this.store = this.props.RSVPStore;
 
-    this.state= {};
+    this.state = {};
 
     this.handleSelectionChange = this.handleSelectionChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -59,25 +59,32 @@ class RSVPResultsList extends React.Component {
 
   render() {
     console.log('rendering results list, state:', this.state);
+    console.log('rendering results list, store:', this.store);
     const results = this.store.results;
 
     if (results) {
       return(
         <div id="rsvp-results-list">
-          <form onSubmit={this.handleSubmit}>
-            <div className="family-name">{results.family}</div>
-            {results.names.map((value, index) => {
-              return (
-                <RSVPResult
-                  key={"rsvp-result" + index}
-                  name={value.name}
-                  plus1={value.plus1}
-                  handleChange={this.handleSelectionChange}
-                />
-              );
-            })}
-            <input type="submit" className="submit-rsvp" value="save"/>
-          </form>
+          {
+            this.store.saved ?
+            <div className="saved-message">Thanks! Your RSVP info has been {this.store.update ? 'updated!': 'saved!'}</div> :
+
+            <form onSubmit={this.handleSubmit}>
+              <div className="family-name">{results.family}</div>
+              {results.names.map((value, index) => {
+                return (
+                  <RSVPResult
+                    key={"rsvp-result" + index}
+                    name={value.name}
+                    plus1={value.plus1}
+                    rsvp={value.rsvp}
+                    handleChange={this.handleSelectionChange}
+                  />
+                );
+              })}
+              <input type="submit" className="submit-rsvp" value="Save"/>
+            </form>
+          }
         </div>
       )
     }
