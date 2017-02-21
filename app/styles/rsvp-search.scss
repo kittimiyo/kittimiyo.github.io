@@ -1,10 +1,15 @@
 #rsvp-search {
 
   .search-again {
-    font-size: 14px;
+    font-size: 24px;
     color: #666;
     text-align: center;
     cursor: pointer;
+    text-shadow:
+      -1px -1px 0 #ddd,
+      1px -1px 0 #ddd,
+      -1px 1px 0 #ddd,
+      1px 1px 0 #ddd;
 
     &:hover {
       font-weight: bold;
@@ -25,7 +30,7 @@
     .text-input {
       margin: 5px 0;
       width: 200px;
-      font-size: 14px;
+      font-size: 24px;
 
       &::-webkit-input-placeholder {
         text-align: center;
