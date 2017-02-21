@@ -1,16 +1,17 @@
 
 #header {
-  /* background image settings */
-  background-image: url('../resources/20161225_154109.jpg');
-  background-repeat: no-repeat;
-  -webkit-background-size: 100%;
-  background-size: 105%;
-  background-position-x: 80%;
-
-  color: #FFF;
-  height: 430px;
   text-align: center;
+  margin: 0 0 20px 0;
+
+  .names {
+    color: #999;
+    margin: 30px 0;
+    font-size: 80px;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, .3);
+  }
+
   .join {
+    color: #ccc;
     font-size: 60px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
@@ -19,12 +20,5 @@
     font-size: 24px;
     color: #fff;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-  }
-
-  .names {
-    position: relative;
-    top: 180px;
-    font-size: 80px;
-    text-shadow: 2px 2px 7px rgba(0, 0, 0, .5);
   }
 }

@@ -39,6 +39,20 @@ class RSVPResult extends React.Component {
             <div className="option">Attending</div>
           </div>
 
+          {this.props.plus1 ?
+            <div className="attending-not-attending with-guest">
+              <div className="radio">
+                <input
+                  className="attending-with-guest"
+                  type="radio"
+                  name={this.props.name}
+                  checked={this.state.selected === 'attending-with-guest'}
+                  onChange={this.handleChange}
+                />
+                <div className="option">Attending with Guest</div>
+              </div>
+            </div> : null}
+
           <div className="radio">
             <input
               className="not-attending"
@@ -50,21 +64,6 @@ class RSVPResult extends React.Component {
             <div className="option">Not Attending (with deepest regrets)</div>
           </div>
         </div>
-
-        {this.props.plus1 ?
-          <div className="attending-not-attending with-guest">
-            <div className="radio">
-              <input
-                className="attending-with-guest"
-                type="radio"
-                name={this.props.name}
-                checked={this.state.selected === 'attending-with-guest'}
-                onChange={this.handleChange}
-              />
-              <div className="option">Attending with Guest</div>
-            </div>
-          </div> : null}
-
       </div>
     );
   }

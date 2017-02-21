@@ -7,7 +7,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-const filePath = './test.json';
+const filePath = './initialRSVPInfo.json';
 
 function writeJSONToFile(json) {
   const file = fs.createWriteStream(filePath);

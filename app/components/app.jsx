@@ -15,9 +15,7 @@ class App extends React.Component {
     return (
       <div id="app">
         <Header/>
-        <ListBox>
-          <RSVPContainer />
-        </ListBox>
+        <RSVPContainer />
       </div>
     );
   }

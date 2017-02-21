@@ -3,21 +3,8 @@
   color: #FFF;
   height: inherit;
 
-  .rsvp-cat-pic {
-    /* background image settings */
-    background-image: url('../resources/download_20150822_110147.jpg');
-    background-repeat: no-repeat;
-    -webkit-background-size: 100%;
-    background-size: 110%;
-    background-position-y: 20%;
-    background-position-x: 60%;
-
-    width: 35%;
-  }
-
   .box {
-    background-color: #ffccff;
-    width: 65%;
+    margin: 0 auto;
     max-width: 555px;
   }
 
