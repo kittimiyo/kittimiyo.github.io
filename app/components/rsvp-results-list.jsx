@@ -63,27 +63,28 @@ class RSVPResultsList extends React.Component {
     const results = this.store.results;
 
     if (results) {
-      return(
+      return (
         <div id="rsvp-results-list">
           {
             this.store.saved ?
-            <div className="saved-message">Thanks! Your RSVP info has been {this.store.update ? 'updated!': 'saved!'}</div> :
+              <div className="saved-message">Thanks! Your RSVP info has
+                been {this.store.update ? 'updated!' : 'saved!'}</div> :
 
-            <form onSubmit={this.handleSubmit}>
-              <div className="family-name">{results.family}</div>
-              {results.names.map((value, index) => {
-                return (
-                  <RSVPResult
-                    key={"rsvp-result" + index}
-                    name={value.name}
-                    plus1={value.plus1}
-                    rsvp={value.rsvp}
-                    handleChange={this.handleSelectionChange}
-                  />
-                );
-              })}
-              <input type="submit" className="submit-rsvp" value="Save"/>
-            </form>
+              <form onSubmit={this.handleSubmit}>
+                <div className="family-name">{results.family}</div>
+                {results.names.map((value, index) => {
+                  return (
+                    <RSVPResult
+                      key={"rsvp-result" + index}
+                      name={value.name}
+                      plus1={value.plus1}
+                      rsvp={value.rsvp}
+                      handleChange={this.handleSelectionChange}
+                    />
+                  );
+                })}
+                <input type="submit" className="submit-rsvp" value="Save"/>
+              </form>
           }
         </div>
       )
