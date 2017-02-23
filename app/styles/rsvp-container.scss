@@ -1,6 +1,8 @@
+@import 'base';
+
 #rsvp-container {
   display:  flex;
-  color: #FFF;
+  color: $color-white;
   height: inherit;
 
   .box {
@@ -9,15 +11,11 @@
   }
 
   .title {
+    font-family: $font-scratchy;
     font-size: 60px;
     text-align: center;
-    //text-shadow: 0 0 5px rgba(0, 0, 0, .5);
+    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
     margin: 20px 0 0 0;
-    text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
   }
 
   form.results {

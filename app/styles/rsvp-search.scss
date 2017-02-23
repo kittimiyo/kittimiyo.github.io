@@ -1,15 +1,12 @@
+@import 'base';
+
 #rsvp-search {
 
   .search-again {
     font-size: 24px;
-    color: #666;
+    color: $color-white;
     text-align: center;
     cursor: pointer;
-    text-shadow:
-      -1px -1px 0 #ddd,
-      1px -1px 0 #ddd,
-      -1px 1px 0 #ddd,
-      1px 1px 0 #ddd;
 
     &:hover {
       font-weight: bold;
@@ -20,7 +17,7 @@
     font-size: 14px;
     flex-direction: column;
     text-align: center;
-    color: #666;
+    color: $color-dark-gray;
   }
 
   form.query {

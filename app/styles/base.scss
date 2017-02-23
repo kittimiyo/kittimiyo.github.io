@@ -1,19 +1,19 @@
-#app {
-  margin: 0 auto;
 
-  input[type=submit] {
-    margin: 15px;
-    padding: 5px 15px 8px 15px;
-    font-size: 20px;
-    color: #fff;
-    background: #888;
-    border: 0 none;
-    cursor: pointer;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+// fonts
+$font-title: "grafolita-script", sans-serif;
+$font-scratchy: "flood-std", sans-serif;
+$font-fancy-outline: "azote", serif;
+$font-bold-shadow: "sutro-deluxe-primary", sans-serif;
+$font-bold-fill: "brim-narrow-combined-1", sans-serif;
+$font-normal: "brioso-pro-display", serif;
+$font-normal-stylized: "balzano-std", sans-serif;
+$font-normal-friendly: "los-feliz", serif;
+$font-normal-clean: "parisplus-clair", sans-serif;
 
-    &:hover {
-      background: #666;
-    }
-  }
-}
+// colors
+$color-light-plum: #ffd7fe;
+$color-white: #fff;
+$color-dark-gray: #666;
+
+// media sizing
+$size: 1;
