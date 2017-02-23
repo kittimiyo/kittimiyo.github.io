@@ -1,3 +1,5 @@
+@import 'base';
+
 #app {
   margin: 0 auto;
 
@@ -5,15 +7,15 @@
     margin: 15px;
     padding: 5px 15px 8px 15px;
     font-size: 20px;
-    color: #fff;
-    background: #888;
+    color: $color-white;
+    background: $color-light-gray;
     border: 0 none;
     cursor: pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;
 
     &:hover {
-      background: #666;
+      background: $color-dark-gray;
     }
   }
 }
