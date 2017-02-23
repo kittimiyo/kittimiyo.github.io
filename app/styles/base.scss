@@ -1,0 +1,19 @@
+#app {
+  margin: 0 auto;
+
+  input[type=submit] {
+    margin: 15px;
+    padding: 5px 15px 8px 15px;
+    font-size: 20px;
+    color: #fff;
+    background: #888;
+    border: 0 none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+    &:hover {
+      background: #666;
+    }
+  }
+}
