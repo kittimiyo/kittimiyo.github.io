@@ -3,15 +3,11 @@ import DevTools from 'mobx-react-devtools';
 
 import '../styles/app.scss'
 import Header from './header.jsx';
-import ListBox from './list-box.jsx';
+import ListBox from './side-menu.jsx';
 import RSVPContainer from './rsvp-container.jsx';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+const App = React.createClass({
+  render: function() {
     return (
       <div id="app">
         <Header/>
@@ -19,6 +15,6 @@ class App extends React.Component {
       </div>
     );
   }
-}
+});
 
 export default App;
