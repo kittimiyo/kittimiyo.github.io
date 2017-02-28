@@ -1,13 +1,37 @@
-#list-box {
+@import 'base';
+
+#side-menu {
   // size transition
   transition:all .3s;
   -o-transition:all .3s;
   -moz-transition:all .3s;
   -webkit-transition:all .3s;
 
-  height: 170px;
+  font-family: $font-normal-serif;
+  font-size: 35px;
+  color: $color-white;
+  position: fixed;
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, .2);
+  right: 10%;
+  top: 25%;
 
-  &.active {
-    height: 500px
+  .side-menu-center {
+    max-width: 200px;
+    margin-top: 30px;
+    display:  flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    div {
+      cursor: pointer;
+      &:hover {
+        font-weight: bold;
+      }
+    }
+
+  }
+
+  .selected {
+    color: $color-light-plum;
   }
 }

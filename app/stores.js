@@ -64,6 +64,20 @@ class RSVPStore {
   }
 }
 
+class NavigatorStore {
+  constructor() {
+    extendObservable(this, {
+      // state data
+      selected: 'rsvp',
+
+      // functions
+      setSelected: action((selected) => {
+        this.selected = selected;
+      })
+    })
+  }
+}
+
 // helper fcns
 const validateQuery = value => {
   const isNum = /^[0-9]+$/.test(value);
@@ -71,5 +85,6 @@ const validateQuery = value => {
 };
 
 export default {
-  RSVPStore: new RSVPStore()
+  RSVPStore: new RSVPStore(),
+  NavigatorStore: new NavigatorStore()
 };

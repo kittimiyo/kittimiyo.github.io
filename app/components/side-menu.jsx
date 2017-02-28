@@ -1,4 +1,5 @@
 import React from 'react';
+import { observer, inject } from 'mobx-react';
 
 import '../styles/side-menu.scss'
 
@@ -6,24 +7,43 @@ class SideMenu extends React.Component {
   constructor(props) {
     super(props);
 
+    this.store = this.props.NavigatorStore;
     this.state = {
-      selected: ''
+      selected: 'rsvp'
     };
 
     this.select = this.select.bind(this);
   }
 
   select(event) {
-    this.setState({selected: event.name});
+    this.setState({selected: event.target.id});
+    this.store.setSelected(event.target.id);
   }
 
   render() {
     return (
-      <div id="side-menu" className={"" + this.state.className} onClick={this.select}>
-        {this.props.children}
+      <div id="side-menu" >
+        <div className="side-menu-center">
+        <div
+          id="rsvp"
+          className={this.state.selected === 'rsvp' ? 'selected' : ''}
+          onClick={this.select}>RSVP</div>
+        <div
+          id="location"
+          className={this.state.selected === 'location' ? 'selected' : ''}
+          onClick={this.select}>Location</div>
+        <div
+          id="schedule"
+          className={this.state.selected === 'schedule' ? 'selected' : ''}
+          onClick={this.select}>Schedule</div>
+        <div
+          id="registry"
+          className={this.state.selected === 'registry' ? 'selected' : ''}
+          onClick={this.select}>Registry</div>
       </div>
+        </div>
     );
   }
 }
 
-export default SideMenu;
+export default inject('NavigatorStore')(observer(SideMenu));

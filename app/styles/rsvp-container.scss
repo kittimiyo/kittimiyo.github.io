@@ -1,14 +1,10 @@
 @import 'base';
 
 #rsvp-container {
-  display:  flex;
   color: $color-white;
   height: inherit;
-
-  .box {
-    margin: 0 auto;
-    max-width: 555px;
-  }
+  margin: 0 auto ;
+  max-width: 555px;
 
   .title {
     font-family: $font-scratchy;

@@ -3,6 +3,11 @@
 #app {
   margin: 0 auto;
 
+  #sub-contents {
+    //display: flex;
+    //justify-content: space-between;
+  }
+
   input[type=submit] {
     margin: 15px;
     padding: 5px 15px 8px 15px;

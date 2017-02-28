@@ -1,23 +1,25 @@
 import React from 'react';
+import { observer, inject } from 'mobx-react';
 
 import '../styles/rsvp-container.scss'
 import RSVPSearch from './rsvp-search.jsx'
 import RSVPResultsList from './rsvp-results-list.jsx'
 
 function RSVPContainer() {
-  console.log('rendering rsvp-container');
+  console.log('rendering rsvp-container', this.props.NavigatorStore.selected);
 
-  return (
-    <div id="rsvp-container">
-      <div className="rsvp-cat-pic"></div>
-      <div className="box">
+  if(this.props.NavigatorStore.selected === 'rsvp'){
+    return (
+      <div id="rsvp-container">
         <div className="title">RSVP</div>
         <RSVPSearch />
         <RSVPResultsList />
       </div>
-    </div>
-  );
+    );
+  }
+
+  return null;
 }
 
 
-export default RSVPContainer;
+export default inject('NavigatorStore')(observer(RSVPContainer));

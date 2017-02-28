@@ -9,16 +9,13 @@ $font-normal: "brioso-pro-display", serif;
 $font-normal-stylized: "balzano-std", sans-serif;
 $font-normal-friendly: "los-feliz", serif;
 $font-normal-clean: "parisplus-clair", sans-serif;
+$font-normal-serif: "utopia-std-display", serif;
 
 // colors
 $color-light-plum: #ffd7fe;
+$color-green: #91A537;
 $color-white: #fff;
 $color-dark-gray: #666;
 $color-light-gray: #888;
 
 // media sizing
-$size: 1;
-
-@media screen and (max-width: 320px) {
-  $size: 2;
-}
