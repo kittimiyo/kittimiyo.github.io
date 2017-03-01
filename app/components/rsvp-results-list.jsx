@@ -31,10 +31,11 @@ class RSVPResultsList extends React.Component {
     console.log('state results:', this.state);
 
     let newValues = Object.assign({}, this.store.results);
+    console.log('in handleSubmit, this.store.results:', newValues);
     let totalPeople = 0;
 
     newValues.names.forEach((value, index) => {
-      const rsvp = this.state[value.name];
+      const rsvp = this.state[value.name] || newValues.names[index].rsvp;
       if (rsvp) {
         newValues.names[index].rsvp = rsvp;
 
