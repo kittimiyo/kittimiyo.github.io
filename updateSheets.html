@@ -170,7 +170,7 @@
                         let coming = '';
                         if(group.totalPeople !== 'notset') {
                             coming = group.totalPeople;
-                            notComing = invited - coming;
+                            notComing = (invited === coming) ? '' : invited - coming;
                         } else {
                             undecided = invited;
                         }
