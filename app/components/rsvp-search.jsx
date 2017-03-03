@@ -15,7 +15,6 @@ class RSVPSearch extends React.Component {
     this.store = this.props.RSVPStore;
 
     const query = querystring.parse(window.location.search.substr(1));
-    // turn off query while designing 2/14
     if (query.code) {
       console.log('code in query:', query);
       this.store.getRSVP(query.code);

@@ -9,8 +9,7 @@ import LocationContainer from './location-container.jsx';
 import ScheduleContainer from './schedule-container.jsx';
 import RegistryContainer from './registry-container.jsx';
 
-const App = React.createClass({
-  render: function() {
+function App() {
     return (
       <div id="app">
         <Header/>
@@ -23,7 +22,6 @@ const App = React.createClass({
         </div>
       </div>
     );
-  }
-});
+}
 
 export default App;
