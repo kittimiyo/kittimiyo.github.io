@@ -7,6 +7,7 @@ function LocationContainer() {
   if(this.props.NavigatorStore.selected === 'location'){
     return (
       <div id="location-container">
+        <div className="title">Location</div>
         <div >Coming soon!</div>
       </div>
     );

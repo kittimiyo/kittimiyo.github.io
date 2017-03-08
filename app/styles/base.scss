@@ -1,21 +1,39 @@
+// Google fonts
+$f-karla: 'Karla', sans-serif;
+$f-marck-script: 'Marck Script', cursive;
+$f-mogra: 'Mogra', cursive;
+$f-montez: 'Montez', cursive;
+$f-offside: 'Offside', cursive;
+$f-sacramento: 'Sacramento', cursive;
+$f-stalemate: 'Stalemate', cursive;
+$f-syncopate: 'Syncopate', sans-serif;
 
-// fonts
-$font-title: "grafolita-script", sans-serif;
-$font-scratchy: "flood-std", sans-serif;
-$font-fancy-outline: "azote", serif;
-$font-bold-shadow: "sutro-deluxe-primary", sans-serif;
-$font-bold-fill: "brim-narrow-combined-1", sans-serif;
-$font-normal: "brioso-pro-display", serif;
-$font-normal-stylized: "balzano-std", sans-serif;
-$font-normal-friendly: "los-feliz", serif;
-$font-normal-clean: "parisplus-clair", sans-serif;
-$font-normal-serif: "utopia-std-display", serif;
+$f-advent-pro: 'Advent Pro', sans-serif;
+$f-alice: 'Alice', serif;
+$f-arima-madurai: 'Arima Madurai', cursive;
+$f-dosis: 'Dosis', sans-serif;
+$f-josefin-sans: 'Josefin Sans', sans-serif;
+$f-josefin-slab: 'Josefin Slab', serif;
+$f-nixie-one: 'Nixie One', cursive;
+$f-open-sans-condensed: 'Open Sans Condensed', sans-serif;
+$f-oxygen: 'Oxygen', sans-serif;
+$f-pompiere: 'Pompiere', cursive;
+$f-quicksand: 'Quicksand', sans-serif;
+$f-raleway: 'Raleway', sans-serif;
 
-// colors
+// Assigning fonts to text groups
+$f-title-names: $f-sacramento;
+$f-title-date: $f-pompiere;
+$f-title-location: $f-pompiere;
+$f-menu-nav: $f-josefin-slab;
+$f-selected-title: $f-josefin-slab;
+$f-standard: $f-josefin-slab;
+
+// Colors
 $color-light-plum: #ffd7fe;
+$color-plum: #c37acc;
+$color-plum-dark: #A363AB;
 $color-green: #91A537;
 $color-white: #fff;
 $color-dark-gray: #666;
 $color-light-gray: #888;
-
-// media sizing

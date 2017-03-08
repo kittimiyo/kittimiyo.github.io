@@ -3,15 +3,18 @@
 #rsvp-container {
   color: $color-white;
   height: inherit;
-  margin: 0 auto ;
+  margin: 0 auto 40px auto;
   max-width: 555px;
 
   .title {
-    font-family: $font-scratchy;
-    font-size: 60px;
+    font-family: $f-selected-title;
+    font-size: 45px;
     text-align: center;
     text-shadow: 0 0 5px rgba(0, 0, 0, .5);
-    margin: 20px 0 0 0;
+    margin: 10px auto;
+    padding-top: 5px;
+    border: solid 1px white;
+    width: 120px;
   }
 
   form.results {

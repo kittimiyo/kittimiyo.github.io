@@ -2,26 +2,33 @@
 
 #header {
   text-align: center;
-  margin: 0 0 40px 0;
-  font-family: $font-fancy-outline;
-  text-shadow: 0 0 7px rgba(0, 0, 0, 0.8);
   color: $color-white;
 
-  .names {
-    font-family: $font-title;
-    font-weight: bold;
-    margin: 30px 0 0 0;
-    font-size: 100px;
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, .3);
-  }
+  .header-center {
+    margin: 0 auto;
+    display:  flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    max-width: 560px;
+    padding-bottom: 10px;
 
-  .date {
-    font-size: 50px;
-    color: $color-light-plum;
-   }
+    .names {
+      font-family: $f-title-names;
+      font-size: 100px;
+      text-shadow: 2px 2px 15px rgba(0, 0, 0, .3);
+    }
 
-  .location {
-    font-size: 35px;
-    font-family: $font-normal-serif;
+    .info {
+      text-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+      font-size: 35px;
+      font-family: $f-title-date;
+      color: $color-plum;
+      margin-top: -20px;
+
+      span {
+        margin: 0 15px;
+        color: $color-white;
+      }
+    }
   }
 }

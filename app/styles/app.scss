@@ -3,18 +3,23 @@
 #app {
   margin: 0 auto;
 
+  #top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
   #sub-contents {
-    //display: flex;
-    //justify-content: space-between;
+    margin-top: 300px;
   }
 
   input[type=submit] {
     margin: 15px;
-    padding: 5px 15px 8px 15px;
+    padding: 8px 15px 8px 15px;
     font-size: 20px;
     color: $color-white;
     background: $color-light-gray;
-    border: 0 none;
+    border: solid 1px;
     cursor: pointer;
     -webkit-border-radius: 5px;
     border-radius: 5px;

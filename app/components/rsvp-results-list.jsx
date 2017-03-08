@@ -84,7 +84,7 @@ class RSVPResultsList extends React.Component {
                     />
                   );
                 })}
-                <input type="submit" className="submit-rsvp" value="Save"/>
+                <input type="submit" className="submit-rsvp" value="save"/>
               </form>
           }
         </div>

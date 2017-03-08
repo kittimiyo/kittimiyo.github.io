@@ -12,9 +12,11 @@ import RegistryContainer from './registry-container.jsx';
 function App() {
     return (
       <div id="app">
-        <Header/>
-        <div id="sub-contents">
+        <div id="top">
           <SideMenu />
+          <Header />
+        </div>
+        <div id="sub-contents">
           <RSVPContainer />
           <LocationContainer />
           <ScheduleContainer />
