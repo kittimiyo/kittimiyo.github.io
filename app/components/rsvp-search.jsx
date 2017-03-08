@@ -47,7 +47,7 @@ class RSVPSearch extends React.Component {
     }
     if(message === 'invalid query') {
       return <div className="search-message">
-        Please enter the 5-digit code from you invitation</div>;
+        Please enter the 5-digit code from your invitation</div>;
     } else {
       return null;
     }
