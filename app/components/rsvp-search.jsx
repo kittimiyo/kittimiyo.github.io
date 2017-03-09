@@ -66,8 +66,9 @@ class RSVPSearch extends React.Component {
           <form className="query" onSubmit={this.handleSubmit}>
             <input
               className="text-input"
-              type="text" placeholder="invitation code"
+              type="text" placeholder="  invitation code"
               onChange={this.handleChange}/>
+            <i className="material-icons search-arrow" onClick={this.handleSubmit} >&#xE315;</i>
             <input className="search" type="submit" value="search"/>
           </form>}
         {this.queryMessage(this.store.message)}

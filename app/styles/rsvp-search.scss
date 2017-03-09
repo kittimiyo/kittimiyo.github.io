@@ -19,56 +19,69 @@
   }
 
   form.query {
-    margin: 20px auto;
+    margin: 5px auto;
     text-align: center;
     display: flex;
     align-items: center;
     flex-direction: column;
 
     .text-input {
-      margin: 5px 0;
+      //margin: 5px 0;
       padding: 5px;
-      width: 200px;
-      font-size: 24px;
+      width: 250px;
+      font-size: 15px;
       font-family: $f-standard;
       background: transparent;
       border-style: none;
-      border-bottom: solid 1px $color-white;
-      text-align: center;
+      border: solid 1px $color-white;
+      //text-align: center;
       color: $color-white;
+      -webkit-border-radius: 3px;
 
       &:focus {
         outline-offset: 0;
         outline: none;
         border-style: none;
-        border-bottom: solid 1px $color-white;
+        border: solid 1px $color-white;
       }
 
       &::-webkit-input-placeholder {
-        text-align: center;
+        //text-align: center;
         font-family: $f-standard;
-        color: rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, .7);
       }
       :-moz-placeholder {
         /* Firefox 18- */
-        text-align: center;
+        //text-align: center;
         font-family: $f-standard;
-        color: rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, .7);
       }
       ::-moz-placeholder {
         /* Firefox 19+ */
-        text-align: center;
+        //text-align: center;
         font-family: $f-standard;
-        color: rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, .7);
       }
       :-ms-input-placeholder {
-        text-align: center;
+        //text-align: center;
         font-family: $f-standard;
-        color: rgba(255, 255, 255, .5);
+        color: rgba(255, 255, 255, .7);
+      }
+    }
+
+    .search-arrow {
+      position: relative;
+      top: -28px;
+      right: -116px;
+      cursor: pointer;
+
+      &:hover {
+        font-weight: bold;
       }
     }
 
     .search {
+      display: none;
       font-family: $f-standard;
       color: $color-white;
     }

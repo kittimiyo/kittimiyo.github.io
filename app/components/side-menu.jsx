@@ -31,15 +31,15 @@ class SideMenu extends React.Component {
         <div
           id="location"
           className={this.state.selected === 'location' ? 'selected' : ''}
-          onClick={this.select}>Location</div>
+          onClick={this.select}>LOCATION</div>
         <div
           id="schedule"
           className={this.state.selected === 'schedule' ? 'selected' : ''}
-          onClick={this.select}>Schedule</div>
+          onClick={this.select}>SCHEDULE</div>
         <div
           id="registry"
           className={this.state.selected === 'registry' ? 'selected' : ''}
-          onClick={this.select}>Registry</div>
+          onClick={this.select}>REGISTRY</div>
       </div>
         </div>
     );

@@ -1,34 +1,27 @@
 @import 'base';
 
 #side-menu {
-  // size transition
-  transition:all .3s;
-  -o-transition:all .3s;
-  -moz-transition:all .3s;
-  -webkit-transition:all .3s;
-
   font-family: $f-menu-nav;
-  font-size: 25px;
+  font-size: 15px;
   color: $color-white;
-  text-shadow: 2px 2px 7px rgba(0, 0, 0, .2);
+  text-shadow: 2px 2px 7px rgba(0, 0, 0, .4);
 
   .side-menu-center {
-    max-width: 600px;
-    margin: 15px auto 0 auto;
     display:  flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     padding-top: 5px;
-    border: solid 1px;
+    border-bottom: solid 2px rgba(255, 255, 255, .3);
 
     div {
       cursor: pointer;
+      margin: 8px 10px;
 
       &:hover {
         font-weight: bold;
+        text-shadow: none;
       }
 
       &.selected {
-        color: $color-plum;
         font-weight: bold;
         cursor: default;
         text-shadow: none;
