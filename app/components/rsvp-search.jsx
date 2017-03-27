@@ -62,7 +62,7 @@ class RSVPSearch extends React.Component {
             <LoadingSVG />
           </div> :
           this.store.results ?
-          <div className="search-again" onClick={this.resetSearch}>reset search</div> :
+          <div className="search-again" onClick={this.resetSearch}>reset</div> :
           <form className="query" onSubmit={this.handleSubmit}>
             <input
               className="text-input"

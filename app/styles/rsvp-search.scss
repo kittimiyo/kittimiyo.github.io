@@ -1,7 +1,7 @@
 @import 'base';
 #rsvp-search {
     .search-again {
-        font-size: 24px;
+        font-size: 16px;
         color: $color-white;
         text-align: center;
         cursor: pointer;
@@ -37,24 +37,18 @@
                 border: solid 1px $color-white;
             }
             &::-webkit-input-placeholder {
-                //text-align: center;
                 font-family: $f-standard;
                 color: rgba(255, 255, 255, .7);
             }
              :-moz-placeholder {
-                /* Firefox 18- */
-                //text-align: center;
                 font-family: $f-standard;
                 color: rgba(255, 255, 255, .7);
             }
              ::-moz-placeholder {
-                /* Firefox 19+ */
-                //text-align: center;
                 font-family: $f-standard;
                 color: rgba(255, 255, 255, .7);
             }
              :-ms-input-placeholder {
-                //text-align: center;
                 font-family: $f-standard;
                 color: rgba(255, 255, 255, .7);
             }

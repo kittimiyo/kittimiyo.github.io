@@ -11,9 +11,13 @@ class RSVPResultsList extends React.Component {
 
     this.store = this.props.RSVPStore;
 
-    this.state = {};
+    this.state = {
+      names: {},
+      email: ''
+    };
 
     this.handleSelectionChange = this.handleSelectionChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -21,9 +25,15 @@ class RSVPResultsList extends React.Component {
     console.log('radio name:', name);
     console.log('radio selection:', selection);
 
+    const updatedNames = Object.assign(this.state.names, { [name]: selection });
+
     this.setState({
-      [name]: selection
+      names: updatedNames
     })
+  }
+
+  handleChange(event) {
+    this.setState({email: event.target.value});
   }
 
   handleSubmit(event) {
@@ -35,7 +45,7 @@ class RSVPResultsList extends React.Component {
     let totalPeople = 0;
 
     newValues.names.forEach((value, index) => {
-      const rsvp = this.state[value.name] || newValues.names[index].rsvp;
+      const rsvp = this.state.names[value.name] || newValues.names[index].rsvp;
       if (rsvp) {
         newValues.names[index].rsvp = rsvp;
 
@@ -48,11 +58,12 @@ class RSVPResultsList extends React.Component {
     });
 
     newValues.totalPeople = totalPeople;
+    newValues.email = this.state.email || newValues.email;
 
     newValues = toJS(newValues);
     newValues.names = toJS(newValues.names);
 
-    console.log('new built results:', newValues);
+    console.log('saving new values:', newValues);
 
     this.store.setRSVP(newValues);
   }
@@ -60,7 +71,6 @@ class RSVPResultsList extends React.Component {
 
   render() {
     console.log('rendering results list, state:', this.state);
-    console.log('rendering results list, store:', this.store);
     const results = this.store.results;
 
     if (results) {
@@ -86,7 +96,8 @@ class RSVPResultsList extends React.Component {
                 })}
                 <input
                   className="email-input"
-                  type="email" placeholder="  email address (optional)"
+                  type="email"
+                  placeholder={ results.email ? ("  " + results.email) : "  email address (optional)" }
                   onChange={this.handleChange}/>
                 <input type="submit" className="submit-rsvp" value="save"/>
               </form>
