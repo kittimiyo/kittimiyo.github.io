@@ -1,0 +1,37 @@
+@import 'base';
+
+#container-registry {
+  .registry-link {
+    width: 200px;
+    margin: 20px auto;
+
+    a {
+      text-align: left;
+      display: block;
+      //width: 500px;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      text-indent: -9999em;
+
+      &.honeyfund {
+        background: url(../resources/honey2.png) no-repeat;
+        height: 500px;
+        //margin: 0 auto;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%;
+      }
+
+      &.amazon {
+        background: url(../resources/amazonregistry.png) no-repeat;
+        height: 60px;
+        -webkit-background-size: 100%;
+        -moz-background-size: 100%;
+        -o-background-size: 100%;
+        background-size: 100%;
+      }
+    }
+  }
+}

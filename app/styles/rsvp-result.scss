@@ -1,10 +1,12 @@
 @import 'base';
 
 .rsvp-result {
-  border: solid 2px;
+  color: $color-white;
+  border: solid 1px;
   flex-basis: content;
   margin: 10px 0 0 0;
-  background-color: rgba(255, 255, 255, 0.6);
+  //background-color: rgba(255, 255, 255, 0.2);
+  -webkit-border-radius: 3px;
 
   .name {
     font-size: 22px;

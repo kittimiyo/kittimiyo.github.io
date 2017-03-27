@@ -1,22 +1,6 @@
 @import 'base';
 
-#rsvp-container {
-  color: $color-white;
-  height: inherit;
-  margin: 0 auto 40px auto;
-  max-width: 555px;
-
-  .title {
-    font-family: $f-selected-title;
-    font-size: 25px;
-    text-align: center;
-    text-shadow: 0 0 5px rgba(0, 0, 0, .5);
-    margin: 5px auto;
-    padding-top: 5px;
-    //border: solid 1px white;
-    width: 120px;
-  }
-
+#container-rsvp {
   form.results {
     margin: 15px auto;
     text-align: center;

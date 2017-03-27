@@ -14,12 +14,60 @@
     color: $color-dark-gray;
     justify-content: center;
     align-items: center;
+    -webkit-border-radius: 3px;
 
     .family-name {
       color: $color-white;
       text-align: center;
       font-size: 35px;
       margin: 25px 0 0 0;
+    }
+
+    .email-input {
+      padding: 5px;
+      width: 300px;
+      font-size: 15px;
+      font-family: $f-standard;
+      color: $color-white;
+      border-style: none;
+      border: solid 1px;
+      -webkit-border-radius: 3px;
+      flex-basis: content;
+      margin: 10px 0 0 0;
+      background-color: transparent;
+
+      &:focus {
+        outline-offset: 0;
+        outline: none;
+        //border-style: none;
+        //border: solid 1px $color-white;
+      }
+
+      &::-webkit-input-placeholder {
+        //text-align: center;
+        font-family: $f-standard;
+        //color: rgba(255, 255, 255, .7);
+      }
+
+      :-moz-placeholder {
+        /* Firefox 18- */
+        //text-align: center;
+        font-family: $f-standard;
+        //color: rgba(255, 255, 255, .7);
+      }
+
+      ::-moz-placeholder {
+        /* Firefox 19+ */
+        //text-align: center;
+        font-family: $f-standard;
+        //color: rgba(255, 255, 255, .7);
+      }
+
+      :-ms-input-placeholder {
+        //text-align: center;
+        font-family: $f-standard;
+        //color: rgba(255, 255, 255, .7);
+      }
     }
 
     .submit-rsvp {

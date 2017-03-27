@@ -1,20 +1,19 @@
 @import 'base';
 
-#location-container {
+.container {
   color: $color-white;
   height: inherit;
-  margin: 0 auto;
+  margin: 0 auto 40px auto;
   max-width: 555px;
-  text-align: center;
 
   .title {
     font-family: $f-selected-title;
-    font-size: 45px;
+    font-size: 25px;
     text-align: center;
     text-shadow: 0 0 5px rgba(0, 0, 0, .5);
-    margin: 10px auto;
+    margin: 5px auto;
     padding-top: 5px;
-    border: solid 1px white;
-    width: 170px;
+    //border: solid 1px white;
+    width: 120px;
   }
 }

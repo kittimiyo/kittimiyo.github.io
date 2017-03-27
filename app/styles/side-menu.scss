@@ -12,9 +12,11 @@
     padding-top: 5px;
     border-bottom: solid 2px rgba(255, 255, 255, .3);
 
-    div {
+    div, a {
       cursor: pointer;
       margin: 8px 10px;
+      color: $color-white;
+      text-decoration: none;
 
       &:hover {
         font-weight: bold;
@@ -25,6 +27,32 @@
         font-weight: bold;
         cursor: default;
         text-shadow: none;
+      }
+    }
+
+    span {
+      color: #ffac91;
+      font-family: $f-oxygen;
+      position: relative;
+      margin-top: -4px;
+      font-size: 12px;
+      font-style: italic;
+      font-weight: bold;
+      pointer-events: none;
+
+      &.location {
+        margin-left: -87px;
+        padding-right: 40px;
+      }
+
+      &.schedule {
+        margin-left: -93px;
+        padding-right: 46px;
+      }
+
+      &.registry {
+        margin-left: -83px;
+        padding-right: 36px;
       }
     }
   }

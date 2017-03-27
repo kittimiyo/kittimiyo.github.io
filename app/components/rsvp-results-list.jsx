@@ -84,6 +84,10 @@ class RSVPResultsList extends React.Component {
                     />
                   );
                 })}
+                <input
+                  className="email-input"
+                  type="email" placeholder="  email address (optional)"
+                  onChange={this.handleChange}/>
                 <input type="submit" className="submit-rsvp" value="save"/>
               </form>
           }

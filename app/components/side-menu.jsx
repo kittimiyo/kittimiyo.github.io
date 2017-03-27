@@ -32,14 +32,19 @@ class SideMenu extends React.Component {
           id="location"
           className={this.state.selected === 'location' ? 'selected' : ''}
           onClick={this.select}>LOCATION</div>
+          { /*<span className="location">updated!</span>*/ }
         <div
           id="schedule"
           className={this.state.selected === 'schedule' ? 'selected' : ''}
           onClick={this.select}>SCHEDULE</div>
-        <div
+          { /*<span className="schedule">updated!</span>*/ }
+        <a
           id="registry"
           className={this.state.selected === 'registry' ? 'selected' : ''}
-          onClick={this.select}>REGISTRY</div>
+          href="http://www.honeyfund.com/wedding/BowdenPetersen2017"
+          target="_blank"
+          className="honeyfund">REGISTRY</a>
+          <span className="registry">updated!</span>
       </div>
         </div>
     );

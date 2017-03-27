@@ -1,12 +1,12 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
 
-import '../styles/location-container.scss'
+import '../styles/container-location.scss'
 
 function LocationContainer() {
   if(this.props.NavigatorStore.selected === 'location'){
     return (
-      <div id="location-container">
+      <div id="container-location" className="container">
         <div className="title">Location</div>
         <div >Coming soon!</div>
       </div>
