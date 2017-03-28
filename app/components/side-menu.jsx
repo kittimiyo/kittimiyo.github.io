@@ -44,9 +44,9 @@ class SideMenu extends React.Component {
           href="http://www.honeyfund.com/wedding/BowdenPetersen2017"
           target="_blank"
           className="honeyfund">REGISTRY</a>
-          <span className="registry">updated!</span>
-      </div>
         </div>
+        <div className="updated registry">updated!</div>
+      </div>
     );
   }
 }
