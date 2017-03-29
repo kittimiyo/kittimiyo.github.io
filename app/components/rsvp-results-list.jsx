@@ -58,7 +58,7 @@ class RSVPResultsList extends React.Component {
     });
 
     newValues.totalPeople = totalPeople;
-    newValues.email = this.state.email || newValues.email;
+    if(this.state.email) newValues.email = this.state.email;
 
     newValues = toJS(newValues);
     newValues.names = toJS(newValues.names);
