@@ -5,12 +5,38 @@
   font-size: 17px;
   color: $color-white;
   text-shadow: 2px 2px 7px rgba(0, 0, 0, .4);
+  position: fixed;
+  width: 100%;
+
+  .background-container {
+    height: 51px;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    z-index: 10;
+    overflow: hidden;
+
+    .background {
+      background: url(../resources/sky.jpg) no-repeat left bottom fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+      z-index: 5;
+      overflow: hidden;
+    }
+  }
 
   .side-menu-center {
     display:  flex;
     justify-content: flex-end;
     padding: 5px 15px 0 0;
     border-bottom: solid 2px rgba(255, 255, 255, .3);
+    z-index: 10;
+    position: fixed;
+    width: 100%;
 
     div, a {
       cursor: pointer;
@@ -32,37 +58,53 @@
   }
 
   .updated {
+    position: fixed;
     color: $color-light-plum;
-    font-family: $f-montez;
-    position: relative;
-    margin-top: 14px;
-    font-size: 20px;
     pointer-events: none;
     float: right;
-    background: url(../resources/arrow.svg);
-    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    top: 50px;
+    right: 0;
 
-    /* Safari */
-    -webkit-transform: rotate(20deg);
+    .location {
+      background: url(../resources/arrow-med.svg) no-repeat;
+      width: 40px;
+      height: 140px;
+      margin: -33px 40px 0 0;
 
-    /* Firefox */
-    -moz-transform: rotate(20deg);
+      /* Safari */
+      -webkit-transform: rotate(-60deg);
 
-    /* IE */
-    -ms-transform: rotate(20deg);
+      /* Firefox */
+      -moz-transform: rotate(-60deg);
 
-    &.location {
-      margin-left: -87px;
-      padding-right: 40px;
+      /* IE */
+      -ms-transform: rotate(-60deg);
     }
 
-    &.schedule {
+    .schedule {
       margin-left: -93px;
       padding-right: 46px;
     }
 
-    &.registry {
-      padding: 20px 25px 0 20px;
+    .registry {
+      margin-top: 19px;
+      background: url(../resources/arrow.svg) no-repeat;
+      font-size: 20px;
+      padding: 46px 29px 0 23px;
+      font-family: $f-montez;
+      line-height: 0;
+
+      /* Safari */
+      -webkit-transform: rotate(20deg);
+
+      /* Firefox */
+      -moz-transform: rotate(20deg);
+
+      /* IE */
+      -ms-transform: rotate(20deg);
     }
   }
 }
