@@ -4,11 +4,19 @@
   max-width: 100%;
 
   .info {
-    text-align: center;
-    margin: 0 auto 20px auto;
-    //width: 400px;
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-    font-size: 18px;
+    text-decoration: none;
+    color: $color-white;
+
+    &:hover {
+      color: $color-light-plum
+    }
+
+    div {
+      text-align: center;
+      margin: 0 auto 20px auto;
+      text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+      font-size: 18px;
+    }
   }
 
   .google-map {

@@ -38,9 +38,12 @@ class LocationContainer extends React.Component {
       return (
         <div id="container-location" className="container">
           <div className="title">Location</div>
-          <div className='info'><strong>Luther Burbank Center for the Arts, Carston Cabaret Room<br/></strong>
+          <a href={this.state.directions}
+             target="_blank"
+             className='info'>
+            <div><strong>Luther Burbank Center for the Arts, Carston Cabaret Room<br/></strong>
             50 Mark West Springs Road,
-            Santa Rosa, CA 95403</div>
+            Santa Rosa, CA 95403</div></a>
 
           <Map
             style={{ borderRadius: '4px' }}
