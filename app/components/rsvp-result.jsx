@@ -19,7 +19,7 @@ class RSVPResult extends React.Component {
     console.log('radio value:', value);
 
     this.props.handleChange(this.props.name, event.target.className);
-    this.setState({selected: event.target.className});
+    this.setState({ selected: event.target.className });
   }
 
   render() {
@@ -33,30 +33,31 @@ class RSVPResult extends React.Component {
               className="attending"
               type="radio"
               name={this.props.name}
-              checked={this.state.selected === 'attending'}
+              checked={this.state.selected === "attending"}
               onChange={this.handleChange}
             />
             <div className="option">Attending</div>
           </div>
 
-          {this.props.plus1 ?
-            <div className="radio">
-              <input
-                className="attending-with-guest"
-                type="radio"
-                name={this.props.name}
-                checked={this.state.selected === 'attending-with-guest'}
-                onChange={this.handleChange}
-              />
-              <div className="option">Attending with Guest</div>
-            </div> : null}
+          {this.props.plus1
+            ? <div className="radio">
+                <input
+                  className="attending-with-guest"
+                  type="radio"
+                  name={this.props.name}
+                  checked={this.state.selected === "attending-with-guest"}
+                  onChange={this.handleChange}
+                />
+                <div className="option">Attending with Guest</div>
+              </div>
+            : null}
 
           <div className="radio">
             <input
               className="not-attending"
               type="radio"
               name={this.props.name}
-              checked={this.state.selected === 'not-attending'}
+              checked={this.state.selected === "not-attending"}
               onChange={this.handleChange}
             />
             <div className="option">Not Attending (with deepest regrets)</div>
@@ -65,7 +66,6 @@ class RSVPResult extends React.Component {
       </div>
     );
   }
-
 }
 
 export default RSVPResult;

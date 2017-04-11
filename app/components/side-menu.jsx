@@ -48,6 +48,7 @@ class SideMenu extends React.Component {
         </div>
         <div className="updated">
           <div className="location"></div>
+          <div className="schedule"></div>
           <div className="registry">updated!</div>
         </div>
       </div>

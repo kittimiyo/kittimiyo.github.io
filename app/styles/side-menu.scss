@@ -69,10 +69,10 @@
     right: 0;
 
     .location {
-      background: url(../resources/arrow-med.svg) no-repeat;
+      background: url(../resources/arrow-far.svg) no-repeat;
       width: 40px;
       height: 140px;
-      margin: -33px 40px 0 0;
+      margin: -33px 18px 0 0;
 
       /* Safari */
       -webkit-transform: rotate(-60deg);
@@ -85,8 +85,19 @@
     }
 
     .schedule {
-      margin-left: -93px;
-      padding-right: 46px;
+      background: url(../resources/arrow-med.svg) no-repeat;
+      width: 40px;
+      height: 57px;
+      margin: -2px -18px 0 0;
+
+      /* Safari */
+      -webkit-transform: rotate(-20deg);
+
+      /* Firefox */
+      -moz-transform: rotate(-20deg);
+
+      /* IE */
+      -ms-transform: rotate(-20deg);
     }
 
     .registry {

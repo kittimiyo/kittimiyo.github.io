@@ -1,5 +1,36 @@
 @import 'base';
 
 #container-schedule {
+  .subnote {
+    margin: 0 auto;
+    font-style: italic;
+    text-align: center;
+  }
+
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+
+    .flex-row {
+      display: flex;
+
+      .internal {
+        margin: 5px;
+      }
+
+      .time {
+        width: 190px;
+        font-family: $f-satisfy;
+        font-weight: bold;
+      }
+
+      .text {
+        width: 490px;
+      }
+    }
+  }
+
 
 }

@@ -4,11 +4,16 @@
   max-width: 100%;
 
   .info {
-    text-decoration: none;
-    color: $color-white;
+    width: 500px;
+    margin: 0 auto;
 
-    &:hover {
+    a {
+      text-decoration: none;
+      color: $color-white;
+
+      &:hover {
       color: $color-light-plum
+      }
     }
 
     div {

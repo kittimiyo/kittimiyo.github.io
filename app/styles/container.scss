@@ -3,8 +3,8 @@
 .container {
   color: $color-white;
   height: inherit;
-  margin: 0 auto 40px auto;
-  max-width: 555px;
+  margin: 0 auto 60px auto;
+  max-width: 600px;
 
   .title {
     font-family: $f-selected-title;
@@ -13,7 +13,6 @@
     text-shadow: 0 0 5px rgba(0, 0, 0, .5);
     margin: 5px auto;
     padding-top: 5px;
-    //border: solid 1px white;
     width: 120px;
   }
 }
