@@ -1,33 +1,60 @@
 @import 'base';
 
 #container-schedule {
+  margin-bottom: 80px;
+
   .subnote {
     margin: 0 auto;
     font-style: italic;
     text-align: center;
   }
 
+  .blur {
+    margin-top: 15px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, .1);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 430px;
+    width: 600px;
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+    z-index: 0;
+  }
+
   .flex-column {
+    z-index: 5;
+    margin-top: 15px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     font-size: 24px;
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
 
     .flex-row {
+      z-index: 5;
       display: flex;
 
+
       .internal {
+        z-index: 5;
         margin: 5px;
       }
 
       .time {
-        width: 190px;
+        z-index: 5;
+        width: 148px;
         font-family: $f-satisfy;
         font-weight: bold;
       }
 
       .text {
-        width: 490px;
+        z-index: 5;
+        width: 440px;
       }
     }
   }
