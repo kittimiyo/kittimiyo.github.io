@@ -148,8 +148,9 @@
                 console.log('result:', result);
                 let arr = [];
                 const date = new Date().toLocaleDateString();
-                arr.push(['Last updated: ' + date, '', '', '', '', '', '', '']);
-                arr.push(['Code', 'Names', 'Family', 'Invited', 'Coming', 'Not Coming', 'Undecided', 'Email']);
+                const time = new Date().toLocaleTimeString();
+                arr.push(['Last updated: ' + date + ' at ' + time]);
+                arr.push([]);
                 const keys = Object.keys(result);
                 for(let i = 0; i < keys.length; i++) {
                     const code = keys[i];
@@ -180,7 +181,8 @@
 
                         const email = group.email || '';
 
-                        arr.push([code, nameStr, group.family, invited, coming, notComing, undecided, email]);
+                        arr.push([undefined, undefined, undefined, undefined, undefined, coming, notComing, undecided, email]);
+//                        arr.push([code, nameStr, group.family, invited, coming, notComing, undecided, email]);
                     }
 
 
@@ -198,7 +200,7 @@
 
                 gapi.client.sheets.spreadsheets.values.update({
                     spreadsheetId: '1XOVNyHx8CY5T6LBG1yAL115wIB0rYipiuJkW8bSpJas',
-                    range: 'Sheet2!A1:H100',
+                    range: 'Sheet2!A1:I100',
                     'valueInputOption': 'USER_ENTERED',
                     "values": arr
                 }).then(function (response) {
