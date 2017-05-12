@@ -10,6 +10,8 @@ function Header() {
         <div className="info">
           June 24, 2017
           <span>|</span>
+          4:30pm
+          <span>|</span>
           Santa Rosa, CA
         </div>
       </div>

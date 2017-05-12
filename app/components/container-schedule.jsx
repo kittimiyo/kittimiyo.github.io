@@ -15,16 +15,20 @@ function ScheduleContainer() {
         text: 'Ceremony'
       },
       {
-        time: '6pm',
-        text: 'Start of Reception, Cake cutting'
+        time: '5:45pm',
+        text: 'Bride & Groom First Dance'
       },
       {
-        time: '6pm - 7:30pm',
+        time: '6pm',
+        text: 'Start of Reception, Cake Cutting'
+      },
+      {
+        time: '6pm - 7pm',
         text: 'Dinner'
       },
       {
         time: '7pm',
-        text: 'Wedding festivities'
+        text: 'Wedding festivities, Coffee Service'
       },
       {
         time: '7:30pm',
@@ -33,10 +37,6 @@ function ScheduleContainer() {
       {
         time: '7:30pm - 11pm',
         text: 'Dancing'
-      },
-      {
-        time: '9pm',
-        text: 'Coffee Service'
       },
       {
         time: '11pm',

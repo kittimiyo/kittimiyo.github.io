@@ -1,9 +1,9 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
 
-import '../styles/side-menu.scss'
+import '../styles/navigation.scss'
 
-class SideMenu extends React.Component {
+class Navigation extends React.Component {
   constructor(props) {
     super(props);
 
@@ -22,11 +22,11 @@ class SideMenu extends React.Component {
 
   render() {
     return (
-      <div id="side-menu" >
+      <div id="navigation" >
         <div className="background-container">
-          <div className="background"></div>
+          <div className="background" />
         </div>
-        <div className="side-menu-center">
+        <div className="navigation-center">
           <div
             id="rsvp"
             className={this.state.selected === 'rsvp' ? 'selected' : ''}
@@ -43,17 +43,11 @@ class SideMenu extends React.Component {
             id="registry"
             className={this.state.selected === 'registry' ? 'selected' : ''}
             href="http://www.honeyfund.com/wedding/BowdenPetersen2017"
-            target="_blank"
-            className="honeyfund">REGISTRY</a>
-        </div>
-        <div className="updated">
-          <div className="location"></div>
-          <div className="schedule"></div>
-          <div className="registry">updated!</div>
+            target="_blank">REGISTRY</a>
         </div>
       </div>
     );
   }
 }
 
-export default inject('NavigatorStore')(observer(SideMenu));
+export default inject('NavigatorStore')(observer(Navigation));
