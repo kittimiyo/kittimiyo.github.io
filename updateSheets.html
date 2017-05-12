@@ -192,10 +192,10 @@
                 const arrayEnd = arr.length;
                 arr.push([
                     'totals:', '', '', '',
-                    '=sum(D2:D' + arrayEnd + ')',
                     '=sum(E2:E' + arrayEnd + ')',
                     '=sum(F2:F' + arrayEnd + ')',
-                    '=sum(G2:G' + arrayEnd + ')'
+                    '=sum(G2:G' + arrayEnd + ')',
+                    '=sum(H2:H' + arrayEnd + ')'
                 ]);
 
                 gapi.client.sheets.spreadsheets.values.update({
